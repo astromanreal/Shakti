@@ -1031,10 +1031,15 @@ export const sacredChantsData: SacredChant[] = [
     description: "A powerful hymn composed by Adi Shankaracharya celebrating Goddess Durga's victory over the demon Mahishasura. It is known for its vibrant energy and devotional fervor.",
     type: 'Stotra',
     deityFocus: 'Maa Durga',
-    verses: mahishasuraMardiniStotramVerses.map(v => ({ ...v, english: v.english_transliteration || v.english, explanation: v.explanation || v.english_transliteration || '' })).map(v => ({ ...v, verse_number: v.verse_number || 0 })),
+    verses: mahishasuraMardiniStotramVerses.map(v => ({
+      ...v,
+      english: v.english_transliteration || v.english,
+      explanation: v.explanation || v.english_transliteration || '',
+      verse_number: v.verse_number || 0
+    })),
     imageHint: 'mahisasura mardini durga fierce',
     scriptureReference: "Composition by Adi Shankaracharya",
-    total_verses: 7, 
+    total_verses: 7,
     benefits: [
       "Invokes courage and strength",
       "Destroys negativity and evil forces",
@@ -1042,8 +1047,8 @@ export const sacredChantsData: SacredChant[] = [
       "Fosters devotion to Goddess Durga"
     ],
     notes: "The Mahishasura Mardini Stotram is a very popular and powerful chant, especially recited during Navratri and Durga Puja.",
-    audioUrl": "https://www.youtube.com/results?search_query=Mahishasura+Mardini+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Mahishasura+Mardini+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Mahishasura+Mardini+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Mahishasura+Mardini+Stotram+with+lyrics"
   },
   {
     id: 'argala-stotram',
