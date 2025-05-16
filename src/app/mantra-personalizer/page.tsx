@@ -28,32 +28,6 @@ import type { Metadata } from 'next';
 const pageTitle = "AI Mantra Personalizer - Get Your Custom Mantra";
 const pageDescription = "Receive a personalized mantra based on your preferred deity and spiritual intention. Our AI spiritual guide crafts mantras aligned with your needs for wealth, health, knowledge, etc.";
 
-export const metadata: Metadata = {
-  title: pageTitle,
-  description: pageDescription,
-  keywords: [
-    "Mantra Personalizer", "AI Mantra", "custom mantra", "personalized mantra", 
-    "spiritual intentions", "deity preference", "Hindu mantras AI", "Vedic AI"
-  ],
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: '/mantra-personalizer',
-    images: [
-      {
-        url: `https://picsum.photos/seed/ai-mantra-personalizer/1200/630`, 
-        width: 1200,
-        height: 630,
-        alt: 'AI Mantra Personalizer',
-      },
-    ],
-  },
-  twitter: {
-    title: pageTitle,
-    description: pageDescription,
-    images: [`https://picsum.photos/seed/ai-mantra-personalizer/1200/630`],
-  },
-};
 
 
 const formSchema = z.object({
