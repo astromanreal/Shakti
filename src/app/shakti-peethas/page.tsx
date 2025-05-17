@@ -2,7 +2,7 @@ import { shaktiPeethaData } from '@/data/content';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
-import { MapPin, Zap, Heart, Brain } from 'lucide-react';
+import { MapPin, Zap, Heart, Brain, Shield } from 'lucide-react';
 import ShaktiPeethaMap from '@/components/shakti-peetha-map';
 import type { Metadata } from 'next';
 
