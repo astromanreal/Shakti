@@ -1070,8 +1070,8 @@ export const sacredChantsData: SacredChant[] = [
     ],
     notes: "The Argala Stotram is a preparatory hymn recited before the main Devi Mahatmyam. 'Argala' means 'bolt' or 'obstruction remover'. Chanting this stotram is believed to clear the path for the devotee to receive the full benefits of the Saptashati.",
     scriptureReference: "Markandeya Purana (Part of Devi Mahatmyam)",
-    audioUrl": "https://www.youtube.com/results?search_query=Argala+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Argala+Stotram+with+lyrics",
+    audioUrl: "https://www.youtube.com/results?search_query=Argala+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Argala+Stotram+with+lyrics",
     total_verses: argalaStotramVerses.length,
   },
   {
@@ -1093,8 +1093,8 @@ export const sacredChantsData: SacredChant[] = [
     imageHint: 'Durga Keelakam Stotram key',
     notes: `This hymn has ${keelakamStotramVersesData.length} verses. The introductory verse states: The seer of this Keelaka Stotram of the Durga Saptashati is Shiva; the meter is Anushtubh; the deity is Mahakali. This is chanted as a limb of the Saptashati recitation for the pleasure of Devi Durga. Phala Sruti (Concluding Part): Thus ends the Keelaka Stotram in the Devi Mahatmya section of the Markandeya Purana during the Savarni Manvantara. (Sanskrit: इति श्रीमार्कण्डेयपुराणे सावर्णिके मन्वन्तरे देवीमाहात्म्ये कीलकं सम्पूर्णम्॥)`,
     scriptureReference: 'Durga Saptashati (Markandeya Purana)',
-    audioUrl": "https://www.youtube.com/results?search_query=Keelakam+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Keelakam+Stotram+with+lyrics",
+    audioUrl: "https://www.youtube.com/results?search_query=Keelakam+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Keelakam+Stotram+with+lyrics",
     total_verses: 11
   },
   {
@@ -1118,8 +1118,8 @@ export const sacredChantsData: SacredChant[] = [
     scriptureReference: 'Composition by Adi Shankaracharya',
     author: "Adi Shankaracharya",
     total_verses: 9,
-    audioUrl": "https://www.youtube.com/results?search_query=Parvati+Vallabha+Ashtakam+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Parvati+Vallabha+Ashtakam+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Parvati+Vallabha+Ashtakam+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Parvati+Vallabha+Ashtakam+with+lyrics"
   },
   {
     id: 'mahakali-stotram',
@@ -1147,8 +1147,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     total_verses: 4,
     author: "Traditional",
-    audioUrl": "https://www.youtube.com/results?search_query=Mahakali+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Mahakali+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Mahakali+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Mahakali+Stotram+with+lyrics"
   },
   {
     id: 'shri-suktam',
@@ -1171,8 +1171,8 @@ export const sacredChantsData: SacredChant[] = [
     scriptureReference: 'Rigveda (Khilanis)',
     total_verses: 16, // Approximation
     author: "Vedic Rishis",
-    audioUrl": "https://www.youtube.com/results?search_query=Shri+Suktam+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Shri+Suktam+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Shri+Suktam+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Shri+Suktam+with+lyrics"
   },
   {
     id: 'kanakadhara-stotram',
@@ -1201,8 +1201,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "Lotus flowers, cow's ghee lamp, white rice, turmeric, and sandalwood"
     },
     origin_story: "Adi Shankaracharya composed this stotram when he saw a poor woman donate a dry gooseberry out of devotion. Touched by her humility, he prayed to Lakshmi, who then caused a shower of golden gooseberries to fall in her hut.",
-    audioUrl": "https://www.youtube.com/results?search_query=Kanakadhara+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Kanakadhara+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Kanakadhara+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Kanakadhara+Stotram+with+lyrics"
   },
   {
     id: 'saraswati-stuti',
@@ -1231,8 +1231,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "White flowers, rice, sandalwood, and lamp of cow's ghee"
     },
     origin_story: "It is said that Sage Agastya composed and recited this stuti to invoke the blessings of Goddess Saraswati when he was imparting spiritual and grammatical knowledge to disciples in southern Bharat. The hymn invokes both philosophical and devotional aspects of Saraswati.",
-    audioUrl": "https://www.youtube.com/results?search_query=Saraswati+Stuti+by+Sage+Agastya+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Saraswati+Stuti+by+Sage+Agastya+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Saraswati+Stuti+by+Sage+Agastya+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Saraswati+Stuti+by+Sage+Agastya+with+lyrics"
   },
   {
     id: 'lalita-ashtakam',
@@ -1261,8 +1261,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "Red flowers, fruits, incense, and ghee lamp"
     },
     origin_story: "The Lalita Ashtakam is believed to have been composed by ancient sages to honor Goddess Lalita. It is said that chanting this hymn with devotion brings the goddess's blessings of wealth, protection, and spiritual illumination.",
-    audioUrl": "https://www.youtube.com/results?search_query=Lalita+Ashtakam+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Lalita+Ashtakam+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Lalita+Ashtakam+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Lalita+Ashtakam+with+lyrics"
   },
   {
     id: 'annapurna-stotram',
@@ -1291,8 +1291,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "Rice, fruits, milk, ghee, and flowers (preferably red or yellow)"
     },
     origin_story: "The Annapurna Stotram is composed by Adi Shankaracharya, who revered Goddess Annapurna as the provider of sustenance and nourishment. It is believed that reciting this stotram brings blessings of abundance and ensures that the devotee’s needs are always met.",
-    audioUrl": "https://www.youtube.com/results?search_query=Annapurna+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Annapurna+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Annapurna+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Annapurna+Stotram+with+lyrics"
   },
   {
     id: 'shiva-shakti-stotram',
@@ -1321,8 +1321,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "Offer flowers, incense, and milk to the Shiva-Shakti idol or image"
     },
     origin_story: "The Shiva-Shakti Stotram has been passed down through generations as a prayer to invoke the union of Shiva and Shakti, acknowledging their role in creation, preservation, and destruction. It is often recited during spiritual practices to harmonize the energies of both the masculine and feminine aspects within oneself.",
-    audioUrl": "https://www.youtube.com/results?search_query=Shiva+Shakti+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Shiva+Shakti+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Shiva+Shakti+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Shiva+Shakti+Stotram+with+lyrics"
   },
   {
     id: 'kali-kavach',
@@ -1351,8 +1351,8 @@ export const sacredChantsData: SacredChant[] = [
         offering: "Red flowers, incense, mustard oil lamp, chanting of 'Om Krim Kalikayai Namah'"
     },
     origin_story: "The Kali Kavach has its roots in ancient Tantric traditions where devotees used such stotras as mystical protection. Often recited before battle or spiritual sadhana, it is believed to cloak the devotee with divine energy.",
-    audioUrl": "https://www.youtube.com/results?search_query=Kali+Kavach+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Kali+Kavach+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Kali+Kavach+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Kali+Kavach+with+lyrics"
   },
   {
     id: 'tara-stotram',
@@ -1383,8 +1383,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Tara emerged in the Tantric traditions as a compassionate yet fierce goddess, known to have saved Shiva himself. She is often considered the mother of wisdom, navigating devotees across the ocean of ignorance.",
     associated_texts: ["Tara Tantra", "Brihad Nila Tantra", "Rudra Yamala Tantra"],
-    audioUrl": "https://www.youtube.com/results?search_query=Tara+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Tara+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Tara+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Tara+Stotram+with+lyrics"
   },
   {
     id: 'bhuvaneshwari-stotram',
@@ -1415,8 +1415,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Bhuvaneshwari is mentioned in various Shakta texts and Tantras as the sovereign Queen of all universes. She represents the vast space (Akasha) in which all creation manifests and is considered the primordial Mother.",
     associated_texts: ["Devi Bhagavatam", "Rudra Yamala Tantra", "Tripura Rahasya"],
-    audioUrl": "https://www.youtube.com/results?search_query=Bhuvaneshwari+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Bhuvaneshwari+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Bhuvaneshwari+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Bhuvaneshwari+Stotram+with+lyrics"
   },
   {
     id: 'chhinnamasta-kavach',
@@ -1447,8 +1447,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Chhinnamasta is a fierce Mahavidya depicted as a self-decapitated goddess, representing the transcendence of ego and the ultimate liberation from the cycle of life and death. The Kavach is considered a powerful armor for the devotee, protecting them from both internal and external dangers.",
     associated_texts: ["Chhinnamasta Tantra", "Rudra Yamala Tantra", "Tantrasara"],
-    audioUrl": "https://www.youtube.com/results?search_query=Chhinnamasta+Kavach+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Chhinnamasta+Kavach+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Chhinnamasta+Kavach+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Chhinnamasta+Kavach+with+lyrics"
   },
   {
     id: 'bhairavi-stotram',
@@ -1479,8 +1479,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Bhairavi is a fierce aspect of the Divine Mother, symbolizing destruction and transformation. She is often depicted with a terrifying appearance, embodying the ultimate power to annihilate the ego and lead to liberation. The Stotram is a tool for invoking her protection and blessings.",
     associated_texts: ["Bhairavi Tantra", "Rudra Yamala Tantra", "Mahavidya Sadhana"],
-    audioUrl": "https://www.youtube.com/results?search_query=Bhairavi+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Bhairavi+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Bhairavi+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Bhairavi+Stotram+with+lyrics"
   },
   {
     id: 'dhumavati-stotra',
@@ -1511,8 +1511,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Dhumavati is often depicted as a widow, symbolizing the absence of material wealth and attachment. She represents the dissolution of all things, the forces of death and time, and the necessary destruction before new creation can begin. The Stotra is recited to invoke her blessings for overcoming obstacles and attaining spiritual liberation.",
     associated_texts: ["Dhumavati Tantra", "Mahavidya Sadhana", "Rudra Yamala Tantra"],
-    audioUrl": "https://www.youtube.com/results?search_query=Dhumavati+Stotra+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Dhumavati+Stotra+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Dhumavati+Stotra+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Dhumavati+Stotra+with+lyrics"
   },
   {
     id: 'bagalamukhi-stotra',
@@ -1543,8 +1543,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "According to the scriptures, Devi Bagalamukhi emerged from the golden light to silence the storm threatening creation. She stilled the chaotic forces and gained the title 'Stambhini Shakti'—the power to paralyze. Worship of Bagalamukhi is traditionally associated with the mastery of speech, victory over enemies, and control over illusion.",
     associated_texts: ["Bagalamukhi Tantra", "Rudra Yamala Tantra", "Mahavidya Rahasya"],
-    audioUrl": "https://www.youtube.com/results?search_query=Bagalamukhi+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Bagalamukhi+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Bagalamukhi+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Bagalamukhi+Stotram+with+lyrics"
   },
   {
     id: 'matangi-stotram',
@@ -1575,8 +1575,8 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Matangi emerged from the leftover or impure essence (Ucchishta) of the Divine Feast. While all other gods turned away, she accepted what was rejected, revealing her power to transform impurity into wisdom. She teaches that the sacred exists even in the discarded, and speech is the bridge between the inner and outer realms.",
     associated_texts: ["Tantrasara", "Rudra Yamala Tantra", "Mahavidya Rahasya"],
-    audioUrl": "https://www.youtube.com/results?search_query=Matangi+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Matangi+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Matangi+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Matangi+Stotram+with+lyrics"
   },
   {
     id: 'kamala-stotra',
@@ -1607,7 +1607,7 @@ export const sacredChantsData: SacredChant[] = [
     },
     origin_story: "Kamala emerged from the ocean of milk during the Samudra Manthan (cosmic churning) as the goddess of supreme prosperity. As a Mahavidya, she remains detached from greed, offering wealth that supports dharma and inner evolution.",
     associated_texts: ["Tantrasara", "Shakta Pramoda", "Lakshmi Tantra"],
-    audioUrl": "https://www.youtube.com/results?search_query=Kamala+Stotram+chanting",
-    videoUrl": "https://www.youtube.com/results?search_query=Kamala+Stotram+with+lyrics"
+    audioUrl: "https://www.youtube.com/results?search_query=Kamala+Stotram+chanting",
+    videoUrl: "https://www.youtube.com/results?search_query=Kamala+Stotram+with+lyrics"
   }
 ];
