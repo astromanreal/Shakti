@@ -1,3 +1,4 @@
+
 import type { SacredChant, VerseDetail } from '@/types';
 
 // Verses for Mahishasura Mardini Stotram
@@ -1611,3 +1612,4 @@ export const sacredChantsData: SacredChant[] = [
     videoUrl: "https://www.youtube.com/results?search_query=Kamala+Stotram+with+lyrics"
   }
 ];
+

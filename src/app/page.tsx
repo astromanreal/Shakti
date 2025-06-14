@@ -1,25 +1,40 @@
 
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Sparkles, ChevronRight, BookOpen, Star, Shield, Gem, Music, Droplet, Heart, Sun, Layers, Aperture } from 'lucide-react';
+import { 
+    Sparkles, 
+    ChevronRight, 
+    BookOpen, 
+    Users, 
+    MapPin, 
+    Shapes, 
+    Award, 
+    Flame,
+    CalendarClock,
+    Music2,
+    Quote,
+    Aperture,
+    Library as LibraryIcon
+} from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
-import { mahadeviGeneralData } from '@/data/content';
+import { cn } from '@/lib/utils';
 
-const pageTitle = "Maa Adi Shakti – The Eternal Source of Divine Feminine Power";
-const pageDescription = "Welcome to Shakti Darshan, a sacred digital portal dedicated to Maa Adi Shakti, the supreme divine feminine force. Explore her infinite forms, powers, and wisdom, including Tridevi, Mahavidyas, and Shakti Peethas.";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com'; // Fallback to default if not set
-const defaultOgImage = `${siteUrl}/og-mahadevi-home.jpg`; // Updated OG image path
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const pageTitle = "Shakti Darshan – Divine Sanctuary of Cosmic Power & Feminine Wisdom";
+const pageDescription = "Welcome to Shakti Darshan, your sacred portal to explore the multifaceted Divine Feminine. Discover Maa Adi Shakti's forms, wisdom, mantras, and sacred traditions like Tridevi, Mahavidyas, and Shakti Peethas.";
+const ogImageUrl = `${siteUrl}/og-images/homepage-shakti-darshan.jpg`;
 
 export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
-    "Shakti Darshan", "Adi Shakti", "Mahadevi", "Divine Feminine", "Hindu Goddesses", 
-    "Tridevi", "Durga", "Lakshmi", "Saraswati", "Puranas", "Indian Spirituality", "Homepage"
+    "Shakti Darshan", "Adi Shakti", "Divine Feminine", "Hindu Goddesses", "Homepage", 
+    "Spiritual Sanctuary", "Cosmic Power", "Mahavidyas", "Shakti Peethas", "Tridevi",
+    "Maa Adi Shakti", "Sanatan Dharma", "Spiritual feminine power", "Hindu goddess worship"
   ],
   alternates: {
     canonical: '/',
@@ -31,10 +46,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: defaultOgImage,
+        url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: 'Mahadevi - The Supreme Goddess',
+        alt: 'Shakti Darshan Homepage - Gateway to Divine Feminine Wisdom',
       },
     ],
   },
@@ -42,155 +57,292 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: pageTitle,
     description: pageDescription,
-    images: [defaultOgImage],
+    images: [ogImageUrl],
   },
 };
 
+const myriadFormsData = [
+  {
+    icon: Users,
+    title: "🔮 The Das Mahavidyas",
+    link: "/mahavidyas",
+    label: "Wisdom Goddesses",
+    newTitle: "The Das Mahavidyas",
+    subtitle: "Ten gateways to transcendence and inner power.",
+    buttonText: "Unveil the Wisdoms",
+    backgroundImageHint: "abstract fusion 10 mahavidyas faces yantra"
+  },
+  {
+    icon: MapPin,
+    title: "🕉️ Shakti Peethas",
+    link: "/shakti-peethas",
+    label: "Sacred Geography",
+    newTitle: "Shakti Peethas",
+    subtitle: "Where the divine feminine sanctifies the Earth.",
+    buttonText: "Visit Sacred Grounds",
+    backgroundImageHint: "map silhouette glowing sacred sites"
+  },
+  {
+    icon: LibraryIcon,
+    title: "💫 Tridevi & Major Forms",
+    link: "/tridevi",
+    label: "Primary Aspects",
+    newTitle: "Tridevi & Major Forms",
+    subtitle: "Meet the triune goddess and other core emanations.",
+    buttonText: "Explore the Pantheon",
+    backgroundImageHint: "tridevi cosmic energy forms"
+  },
+  {
+    icon: Shapes,
+    title: "🪔 Pancha Prakritis",
+    link: "/pancha-prakritis",
+    label: "Fivefold Nature",
+    newTitle: "Pancha Prakritis",
+    subtitle: "Witness Mahadevi's five nurturing essences of creation.",
+    buttonText: "Discover the Natures",
+    backgroundImageHint: "abstract five elements nature mandala"
+  },
+  {
+    icon: Award,
+    title: "📖 Devi Mahatmyam Forms",
+    link: "/devi-mahatmyam-forms",
+    label: "Epic Manifestations",
+    newTitle: "Devi Mahatmyam Forms",
+    subtitle: "Explore warrior goddesses from the Durga Saptashati.",
+    buttonText: "Witness the Glory",
+    backgroundImageHint: "durga saptashati epic battle abstract"
+  },
+  {
+    icon: Flame,
+    title: "🧘‍♀️ Tantra & Shakti Sadhana",
+    link: "/tantra-sadhana",
+    label: "Transformative Path",
+    newTitle: "Tantra & Shakti Sadhana",
+    subtitle: "Ignite the fire within through ancient energy practices.",
+    buttonText: "Ignite Your Sadhana",
+    backgroundImageHint: "kundalini serpent yantra glowing flame"
+  }
+];
+
+const wisdomQuotes = [
+  {
+    quote: "She is the flame in the heart of time. The power behind the gods. The source from which all things rise and return.",
+    source: "Shakti Darshan Inspiration"
+  },
+  {
+    quote: "Without Shakti, Shiva is Shava (a corpse). Consciousness without power is inert; power without consciousness is blind.",
+    source: "Traditional Tantric Saying"
+  },
+  {
+    quote: "All knowledge, all power, all bliss is within you, for you are She. Realize your true nature.",
+    source: "Inspired by Upanishadic & Shakta Thought"
+  }
+];
+
 
 export default function HomePage() {
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Shakti Darshan",
+    "url": siteUrl,
+    "description": pageDescription,
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": `${siteUrl}/search?q={search_term_string}`,
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
-    <div className="container mx-auto px-4 py-8">
-      <header className="text-center mb-12">
-        <div className="inline-flex items-center justify-center bg-primary/10 p-3 rounded-full mb-4">
-          <Sparkles className="w-12 h-12 text-primary" />
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
-          {pageTitle}
-        </h1>
-        <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
-          Welcome to Shakti Darshan, a sacred digital portal dedicated to Maa Adi Shakti, the supreme divine feminine force. Explore her infinite forms, powers, and wisdom.
-        </p>
-      </header>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <div className="container mx-auto px-4 py-8 space-y-16 md:space-y-24">
+        {/* 1. Hero Banner (Sacred Welcome) */}
+        <section 
+          className="relative text-center py-16 md:py-24 rounded-3xl shadow-2xl border border-primary/20 overflow-hidden bg-gradient-to-br from-primary/5 via-background to-secondary/5"
+          data-ai-hint="animated Manidvipa or Shakti Yantra soft glow"
+          aria-labelledby="hero-title"
+        >
+          <div className="relative z-10 px-4">
+            <h1 id="hero-title" className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 tracking-tight">
+              Welcome to Shakti Darshan
+            </h1>
+            <p className="text-xl md:text-2xl text-secondary font-semibold max-w-2xl mx-auto mb-6">
+              A divine sanctuary to explore the cosmic power of Maa Adi Shakti
+            </p>
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto mb-10 italic">
+             “She is the flame in the heart of time. The power behind the gods. The source from which all things rise and return.”
+            </p>
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 focus-visible:ring-accent">
+              <Link href="/explore">
+                <Sparkles className="w-6 h-6 mr-2.5" /> Explore the Divine Realm
+              </Link>
+            </Button>
+          </div>
+        </section>
 
-      <section className="mb-16">
-        <Card className="shadow-2xl border-2 border-secondary/30 bg-gradient-to-br from-card via-muted/20 to-card overflow-hidden">
-          <CardHeader className="bg-secondary/10 p-6">
-            <div className="flex flex-col items-center text-center">
-              <Layers className="w-16 h-16 text-secondary mb-4" />
-              <CardTitle className="text-3xl md:text-4xl font-bold text-secondary">
-                {mahadeviGeneralData.title}
+        {/* 2. Section: Discover Her Myriad Forms */}
+        <section aria-labelledby="manifestations-title">
+          <header className="text-center mb-12">
+            <h2 id="manifestations-title" className="text-3xl md:text-4xl font-bold text-primary mb-3 tracking-tight">
+              Manifestations of the Divine Mother
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-xl mx-auto">
+              Journey through the diverse forms and aspects of Adi Shakti.
+            </p>
+          </header>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8">
+            {myriadFormsData.map((form) => {
+              const IconComponent = form.icon;
+              return (
+                <Card 
+                  key={form.newTitle} 
+                  className="relative flex flex-col rounded-2xl shadow-xl group overflow-hidden h-80 md:h-96 border border-primary/20 hover:border-primary/50 transition-all duration-300 ease-in-out transform hover:-translate-y-1.5 hover:scale-105"
+                >
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/60 to-transparent z-0"
+                    data-ai-hint={form.backgroundImageHint}
+                    aria-hidden="true"
+                  >
+                  </div>
+
+                  <div className="relative z-10 flex flex-col justify-between h-full p-5 text-center text-white">
+                    <div className="absolute top-4 left-4">
+                      <Badge variant="secondary" className="bg-black/50 text-white backdrop-blur-sm text-xs px-2 py-1">
+                        {form.label}
+                      </Badge>
+                    </div>
+
+                    <div className="flex-grow flex flex-col justify-center items-center pt-8">
+                      <IconComponent className="w-12 h-12 mb-3 text-primary group-hover:text-accent transition-all duration-300" />
+                      <CardTitle className="text-2xl font-semibold mb-1 drop-shadow-lg group-hover:text-primary transition-colors">
+                        {form.newTitle}
+                      </CardTitle>
+                      <p className="text-sm text-gray-200 group-hover:text-white mb-4 drop-shadow-sm px-2 line-clamp-2">
+                        {form.subtitle}
+                      </p>
+                    </div>
+                    
+                    <div className="mt-auto">
+                      <Button 
+                        asChild 
+                        variant="default" 
+                        className="w-full bg-accent hover:bg-accent/80 text-accent-foreground shadow-lg hover:shadow-xl ring-2 ring-transparent hover:ring-accent/70 focus:ring-accent transform hover:scale-105 transition-all duration-300 ease-in-out py-3"
+                        aria-label={`Explore ${form.newTitle}`}
+                      >
+                        <Link href={form.link}>
+                          {form.buttonText} <ChevronRight className="w-4 h-4 ml-1.5 group-hover:translate-x-0.5 transition-transform" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* 3. Section: Timeline of Shakti */}
+        <section aria-labelledby="timeline-title">
+          <Card className="shadow-xl rounded-2xl border-2 border-secondary/20 bg-gradient-to-tl from-secondary/5 via-background to-card p-8 md:p-12 text-center">
+            <div className="inline-flex items-center justify-center bg-secondary/10 p-3.5 rounded-full mb-6 ring-4 ring-secondary/30">
+              <CalendarClock className="w-12 h-12 text-secondary" />
+            </div>
+            <CardTitle id="timeline-title" className="text-3xl md:text-4xl font-bold text-secondary mb-4 tracking-tight">
+              The Eternal Presence of the Goddess
+            </CardTitle>
+            <CardDescription className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
+              Trace Maa Adi Shakti’s role across Yugas, incarnations, and spiritual traditions—from primordial creation to the present age.
+            </CardDescription>
+            <Button asChild size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary/10 text-md px-8 py-6 rounded-xl shadow-md hover:shadow-lg">
+              <Link href="/timeline">
+                View the Full Timeline <ChevronRight className="w-5 h-5 ml-2" />
+              </Link>
+            </Button>
+          </Card>
+        </section>
+
+        {/* 4. Section: Chant & Connect */}
+        <section aria-labelledby="sacred-sounds-title">
+          <Card className="shadow-xl rounded-2xl border-2 border-accent/20 bg-gradient-to-br from-accent/5 via-background to-card p-8 md:p-12 text-center">
+              <div className="inline-flex items-center justify-center bg-accent/10 p-3.5 rounded-full mb-6 ring-4 ring-accent/30">
+                <Music2 className="w-12 h-12 text-accent" />
+              </div>
+              <CardTitle id="sacred-sounds-title" className="text-3xl md:text-4xl font-bold text-accent mb-4 tracking-tight">
+                Sacred Sounds of the Goddess
               </CardTitle>
-              <div className="mt-2 flex flex-wrap justify-center gap-2">
-                {mahadeviGeneralData.otherNames.map(name => (
-                  <Badge key={name} variant="secondary" className="text-sm">{name}</Badge>
-                ))}
+              <CardDescription className="text-lg text-foreground/80 max-w-2xl mx-auto mb-8">
+               Immerse yourself in divine vibrations. Explore powerful mantras and stotras dedicated to Maa Adi Shakti.
+              </CardDescription>
+              <div className="space-y-4 my-6">
+                  <div className="p-4 bg-muted rounded-lg shadow-sm border border-border/30" data-ai-hint="audio waveform animation subtle">
+                      <p className="font-semibold text-primary text-xl">ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे</p>
+                  </div>
+                   <div className="p-4 bg-muted rounded-lg shadow-sm border border-border/30" data-ai-hint="yantra animation subtle light">
+                      <p className="font-semibold text-secondary text-xl">ॐ दुं दुर्गायै नमः</p>
+                  </div>
               </div>
-            </div>
-          </CardHeader>
-          <CardContent className="p-6 md:p-8">
-            <div className="grid md:grid-cols-1 gap-8 items-start">
-              <div className="space-y-6"> 
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2"><Star className="w-5 h-5" /> Affiliations</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {mahadeviGeneralData.affiliations.map(affiliation => (
-                      <Badge key={affiliation} variant="outline" className="px-3 py-1 text-base">{affiliation}</Badge>
-                    ))}
-                  </div>
-                </div>
-                
-                <Separator />
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
-                  <div>
-                    <h4 className="font-semibold text-secondary flex items-center gap-1"><Aperture className="w-4 h-4" /> Abode:</h4>
-                    <p className="text-foreground/90">{mahadeviGeneralData.abode}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary flex items-center gap-1"><Music className="w-4 h-4" /> Mantra:</h4>
-                    <p className="text-foreground/90 font-mono">{mahadeviGeneralData.mantra}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary flex items-center gap-1"><Shield className="w-4 h-4" /> Weapons:</h4>
-                    <p className="text-foreground/90">{mahadeviGeneralData.weapons.join(', ')}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary flex items-center gap-1"><Droplet className="w-4 h-4" /> Symbols:</h4>
-                    <p className="text-foreground/90">{mahadeviGeneralData.symbols.join(', ')}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-secondary flex items-center gap-1"><Sun className="w-4 h-4" /> Mount:</h4>
-                    <p className="text-foreground/90">{mahadeviGeneralData.mount}</p>
-                  </div>
-                </div>
-
-                <Separator />
-
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2"><BookOpen className="w-5 h-5" /> Principal Texts</h3>
-                  <p className="text-sm text-foreground/80 leading-relaxed">
-                    {mahadeviGeneralData.texts.join(', ')}.
-                  </p>
-                </div>
-
-                <Separator />
-                
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2 flex items-center gap-2"><Heart className="w-5 h-5" /> Major Festivals</h3>
-                   <div className="flex flex-wrap gap-2">
-                    {mahadeviGeneralData.festivals.map(festival => (
-                      <Badge key={festival} variant="default" className="px-3 py-1 text-sm">{festival}</Badge>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-
-      <section className="mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-8 text-secondary">Meet the Tridevi</h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { name: 'Maa Durga', description: 'The invincible warrior goddess, embodiment of power and protection.', href: '/tridevi/durga', imgSrc: 'https://i.pinimg.com/736x/fb/fd/92/fbfd92806e9d8fe53648d49768112eab.jpg', hint: 'goddess durga' },
-            { name: 'Maa Lakshmi', description: 'The goddess of wealth, prosperity, and auspiciousness.', href: '/tridevi/lakshmi', imgSrc: 'https://i.pinimg.com/736x/06/29/e7/0629e77e94953e85b18788f7debb4c08.jpg', hint: 'goddess lakshmi' },
-            { name: 'Maa Saraswati', description: 'The goddess of wisdom, knowledge, arts, and music.', href: '/tridevi/saraswati', imgSrc: 'https://i.pinimg.com/736x/3b/d8/79/3bd8795e7614a482616a72766917ae43.jpg', hint: 'goddess saraswati' },
-          ].map((goddess) => (
-            <Card key={goddess.name} className="hover:shadow-2xl transition-shadow duration-300">
-              <CardHeader>
-                <Image
-                  src={goddess.imgSrc}
-                  alt={goddess.name}
-                  width={400}
-                  height={300}
-                  className="rounded-t-lg object-cover w-full h-48"
-                  data-ai-hint={goddess.hint}
-                />
-                <CardTitle className="mt-4 text-2xl text-primary">{goddess.name}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-foreground/80 h-20">{goddess.description}</CardDescription>
-                <Button asChild variant="link" className="text-accent p-0 mt-4">
-                  <Link href={goddess.href}>
-                    Learn More <ChevronRight className="w-4 h-4 ml-1" />
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-md px-8 py-6 rounded-xl shadow-md hover:shadow-lg">
+                  <Link href="/sacred-chants">
+                   Open Sacred Chant Library <ChevronRight className="w-5 h-5 ml-2" />
                   </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
+              </Button>
+          </Card>
+        </section>
 
-      <section className="text-center py-12 bg-secondary/10 rounded-lg">
-        <h2 className="text-3xl font-semibold mb-4 text-secondary">Discover Her Myriad Forms</h2>
-        <p className="text-lg text-foreground/80 max-w-2xl mx-auto mb-6">
-          Journey through the diverse manifestations of the Divine Mother, from the fierce Mahavidyas to the nurturing aspects of Parvati, and explore the sacred geography of the Shakti Peethas.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
-            <Link href="/mahavidyas">The Das Mahavidyas</Link>
+        {/* 5. Section: Featured Wisdom */}
+        <section aria-labelledby="wisdom-title">
+          <header className="text-center mb-10">
+            <h2 id="wisdom-title" className="text-3xl md:text-4xl font-bold text-primary mb-3 tracking-tight">
+              Wisdom of Shakti
+            </h2>
+            <p className="text-lg text-foreground/70 max-w-xl mx-auto">
+              Profound teachings illuminating the nature of the Divine Feminine.
+            </p>
+          </header>
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+            {wisdomQuotes.map((item, index) => (
+              <Card 
+                key={index} 
+                className="shadow-xl rounded-2xl border-2 border-primary/30 bg-gradient-to-tr from-card via-background to-muted/10 p-6 transform hover:scale-105 transition-transform duration-300 flex flex-col justify-between"
+                data-ai-hint="sacred scroll texture parchment"
+                role="article"
+                aria-labelledby={`quote-title-${index}`}
+              >
+                <CardContent className="p-0">
+                  <Quote className="w-10 h-10 text-primary/50 mb-4" aria-hidden="true" />
+                  <p id={`quote-title-${index}`} className="text-lg italic text-foreground/90 leading-relaxed mb-4 font-serif">
+                    “{item.quote}”
+                  </p>
+                </CardContent>
+                <CardFooter className="p-0 pt-4 border-t border-primary/20">
+                  <p className="text-sm text-muted-foreground font-medium">— {item.source}</p>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* 6. Footer CTA */}
+        <section className="text-center py-12 mt-12 bg-gradient-to-r from-secondary/10 via-background to-primary/10 rounded-3xl shadow-2xl border border-border/20" aria-labelledby="footer-cta-title">
+          <Aperture className="w-16 h-16 text-accent mx-auto mb-6 opacity-80" aria-hidden="true" />
+          <h2 id="footer-cta-title" className="text-3xl md:text-4xl font-bold text-accent mb-5 tracking-tight">
+            Begin Your Inner Journey
+          </h2>
+          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 focus-visible:ring-primary mb-8">
+            <Link href="/explore">
+              <Sparkles className="w-6 h-6 mr-2.5" /> Start Exploring Shakti Darshan
+            </Link>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-            <Link href="/shakti-peethas">Shakti Peethas</Link>
-          </Button>
-           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="/mantra-personalizer">Personalize Your Mantra</Link>
-          </Button>
-        </div>
-      </section>
-    </div>
+          <p className="font-mono text-xl text-primary/80 tracking-wider">
+            ॐ ऐं ह्रीं श्रीं क्लीं आदि शक्त्यै नमः
+          </p>
+        </section>
+      </div>
+    </>
   );
 }
-

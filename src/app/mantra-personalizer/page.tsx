@@ -1,196 +1,233 @@
-"use client";
 
-import { useState } from 'react';
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
+import type { Metadata } from 'next';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Loader2, Wand2 } from "lucide-react";
-import { personalizeMantra, PersonalizeMantraInput, PersonalizeMantraOutput } from "@/ai/flows/mantra-personalizer";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import type { Metadata } from 'next';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Wand2, Sparkles, Loader2, AlertCircle } from 'lucide-react';
+// Placeholder for a form component if we use react-hook-form later
+// import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
-// Metadata for static export, page itself is client-side.
-// For client components, metadata is typically defined in the nearest server component parent (e.g., layout.tsx or a server component page wrapper).
-// However, since this is a page.tsx file, we can export metadata directly.
-const pageTitle = "AI Mantra Personalizer - Get Your Custom Mantra";
-const pageDescription = "Receive a personalized mantra based on your preferred deity and spiritual intention. Our AI spiritual guide crafts mantras aligned with your needs for wealth, health, knowledge, etc.";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const pageTitle = "Mantra Personalizer - AI-Powered Stotras & Mantras | Shakti Darshan";
+const pageDescription = "Generate personalized stotras and mantras with our AI tool. Select a deity, express your intention, and receive a unique chant tailored for your spiritual practice and connection with the Divine Feminine.";
+const ogImageUrl = `${siteUrl}/og-images/mantra-personalizer-shakti-darshan.jpg`;
 
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  keywords: [
+    "Mantra Personalizer", "AI Mantra Generator", "Custom Stotras", "Personalized Chants", 
+    "Generative AI Spirituality", "Shakti Mantras AI", "Deity Specific Mantras", "Maa Adi Shakti"
+  ],
+  alternates: {
+    canonical: '/mantra-personalizer',
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: `${siteUrl}/mantra-personalizer`,
+    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: 'AI Mantra Personalizer Tool - Shakti Darshan' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImageUrl],
+  },
+};
 
-
-const formSchema = z.object({
-  deityPreference: z.string().min(2, {
-    message: "Deity preference must be at least 2 characters.",
-  }).max(50, {
-    message: "Deity preference must be at most 50 characters.",
-  }),
-  userIntention: z.string().min(5, {
-    message: "User intention must be at least 5 characters.",
-  }).max(200, {
-    message: "User intention must be at most 200 characters.",
-  }),
-});
-
-function SimpleMarkdownRenderer({ markdown }: { markdown: string }) {
-  if (!markdown) return null;
-
-  const html = markdown
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/^## (.*$)/gim, '<h2 class="text-xl font-semibold mt-2 mb-1">$1</h2>')
-    .replace(/^# (.*$)/gim, '<h1 class="text-2xl font-bold mt-3 mb-2">$1</h1>')
-    .replace(/\n/g, '<br />');
-
-  return <div dangerouslySetInnerHTML={{ __html: html }} className="prose dark:prose-invert max-w-none" />;
-}
-
+// Placeholder for deities - this would ideally come from a shared data source
+const deities = [
+  { id: "durga", name: "Maa Durga" },
+  { id: "lakshmi", name: "Maa Lakshmi" },
+  { id: "saraswati", name: "Maa Saraswati" },
+  { id: "kali", name: "Maa Kali" },
+  { id: "parvati", name: "Maa Parvati" },
+  { id: "lalita", name: "Lalita Tripurasundari" },
+  { id: "general_shakti", name: "Adi Shakti (General)" },
+];
 
 export default function MantraPersonalizerPage() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [result, setResult] = useState<PersonalizeMantraOutput | null>(null);
-  const [error, setError] = useState<string | null>(null);
+  // Placeholder state and handlers - to be implemented with actual form logic and AI flow call
+  // const [selectedDeity, setSelectedDeity] = useState('');
+  // const [userIntent, setUserIntent] = useState('');
+  // const [generatedMantra, setGeneratedMantra] = useState('');
+  // const [isLoading, setIsLoading] = useState(false);
+  // const [error, setError] = useState('');
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      deityPreference: "",
-      userIntention: "",
+  // const handleSubmit = async (event: React.FormEvent) => {
+  //   event.preventDefault();
+  //   setIsLoading(true);
+  //   setError('');
+  //   setGeneratedMantra('');
+  //   // Call Genkit flow here
+  //   // try {
+  //   //   const result = await personalizeMantraFlow({ deity: selectedDeity, intent: userIntent });
+  //   //   setGeneratedMantra(result.mantra);
+  //   // } catch (e) {
+  //   //   setError('Failed to generate mantra. Please try again.');
+  //   // }
+  //   setIsLoading(false);
+  // };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": pageTitle,
+    "description": pageDescription,
+    "url": `${siteUrl}/mantra-personalizer`,
+    "potentialAction": {
+        "@type": "CreateAction",
+        "target": `${siteUrl}/mantra-personalizer#generate` // Points to where action happens
     },
-  });
-
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsLoading(true);
-    setResult(null);
-    setError(null);
-    try {
-      const input: PersonalizeMantraInput = {
-        deityPreference: values.deityPreference,
-        userIntention: values.userIntention,
-      };
-      const response = await personalizeMantra(input);
-      setResult(response);
-    } catch (e) {
-      console.error(e);
-      setError(e instanceof Error ? e.message : "An unknown error occurred.");
-    } finally {
-      setIsLoading(false);
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shakti Darshan",
+      "url": siteUrl,
+      "logo": `${siteUrl}/logo.png`
     }
-  }
+  };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <Card className="max-w-2xl mx-auto shadow-xl">
-        <CardHeader className="text-center">
-          <div className="inline-flex items-center justify-center bg-primary/10 p-3 rounded-full mb-4 mx-auto w-fit">
-            <Wand2 className="w-10 h-10 text-primary" />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }}
+      />
+      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <header className="text-center mb-16" aria-labelledby="mantra-personalizer-title">
+          <div className="inline-flex items-center justify-center bg-primary/10 p-4 rounded-full mb-6 shadow-lg ring-4 ring-primary/20">
+            <Wand2 className="w-16 h-16 text-primary" />
           </div>
-          <CardTitle className="text-3xl">Mantra Personalizer</CardTitle>
-          <CardDescription>
-            Receive a personalized mantra based on your preferred deity and intention, crafted by our AI spiritual guide.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="deityPreference"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Preferred Deity</FormLabel>
-                    <FormControl>
-                      <Input placeholder="e.g., Durga, Lakshmi, Saraswati" {...field} />
-                    </FormControl>
-                    <FormDescription>
-                      Enter the name of the deity you feel most connected to for this mantra.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <FormField
-                control={form.control}
-                name="userIntention"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-lg">Your Intention</FormLabel>
-                    <FormControl>
-                      <Textarea
-                        placeholder="e.g., For wealth and prosperity, for courage and strength, for knowledge and wisdom"
-                        className="resize-none"
-                        {...field}
-                      />
-                    </FormControl>
-                    <FormDescription>
-                      Clearly state the purpose or goal for which you seek this mantra.
-                    </FormDescription>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button type="submit" disabled={isLoading} className="w-full text-lg py-6 bg-accent hover:bg-accent/90">
-                {isLoading ? (
-                  <>
-                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                    Personalizing...
-                  </>
+          <h1 id="mantra-personalizer-title" className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 tracking-tight">
+            AI Mantra & Stotra Personalizer
+          </h1>
+          <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
+            Craft a unique chant aligned with your spiritual focus. Our AI assistant will help you generate a personalized stotra or mantra based on your chosen deity and intention.
+          </p>
+        </header>
+
+        <Card className="max-w-2xl mx-auto shadow-2xl border-2 border-accent/30 bg-gradient-to-br from-card via-background to-muted/20">
+          <CardHeader className="bg-accent/5 p-6">
+            <CardTitle className="text-2xl sm:text-3xl text-accent flex items-center gap-3 tracking-tight">
+              <Sparkles className="w-7 h-7 sm:w-8 sm:h-8" /> Create Your Personalized Chant
+            </CardTitle>
+            <CardDescription className="text-base sm:text-lg text-foreground/70 pt-1">
+              Select a deity and describe your intention or prayer focus.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-6 space-y-6">
+            {/* This is a placeholder form. Actual implementation will use react-hook-form and Server Actions. */}
+            <form /* onSubmit={handleSubmit} */ className="space-y-6">
+              <div>
+                <Label htmlFor="deity-select" className="text-md font-medium text-foreground">Choose Deity</Label>
+                <Select /* value={selectedDeity} onValueChange={setSelectedDeity} */ name="deity" disabled>
+                  <SelectTrigger id="deity-select" className="w-full mt-1.5 py-3 text-base" aria-label="Select Deity">
+                    <SelectValue placeholder="Select a primary deity focus" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {deities.map((deity) => (
+                      <SelectItem key={deity.id} value={deity.id} className="text-base py-2">
+                        {deity.name}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="text-xs text-muted-foreground mt-1">The AI will consider the chosen deity's attributes.</p>
+              </div>
+
+              <div>
+                <Label htmlFor="user-intent" className="text-md font-medium text-foreground">Describe Your Intention</Label>
+                <Textarea
+                  id="user-intent"
+                  name="intent"
+                  // value={userIntent}
+                  // onChange={(e) => setUserIntent(e.target.value)}
+                  placeholder="E.g., 'For courage and overcoming obstacles,' 'For peace and wisdom in studies,' 'Gratitude for blessings received and seeking protection for family.'"
+                  className="w-full mt-1.5 min-h-[100px] text-base"
+                  rows={4}
+                  disabled
+                />
+                <p className="text-xs text-muted-foreground mt-1">Be specific for a more tailored result. (Min. 10 words recommended)</p>
+              </div>
+              
+              <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground text-lg py-7 rounded-xl shadow-md" disabled /* disabled={isLoading || !selectedDeity || userIntent.length < 10} */>
+                {/* {isLoading ? (
+                  <Loader2 className="w-6 h-6 mr-2.5 animate-spin" />
                 ) : (
-                  <>
-                    <Wand2 className="mr-2 h-5 w-5" />
-                    Personalize Mantra
-                  </>
+                  <Sparkles className="w-6 h-6 mr-2.5" />
                 )}
+                Generate Chant */}
+                <Sparkles className="w-6 h-6 mr-2.5" />
+                Generate Chant (Feature Coming Soon)
               </Button>
             </form>
-          </Form>
-        </CardContent>
-      </Card>
-
-      {error && (
-        <Alert variant="destructive" className="mt-8 max-w-2xl mx-auto">
-          <AlertTitle>Error</AlertTitle>
-          <AlertDescription>{error}</AlertDescription>
-        </Alert>
-      )}
-
-      {result && (
-        <Card className="mt-8 max-w-2xl mx-auto shadow-xl">
-          <CardHeader>
-            <CardTitle className="text-2xl text-primary">Your Personalized Mantra</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold text-secondary mb-2">Personalized Mantra:</h3>
-              <div className="p-4 bg-muted rounded-md">
-                 <SimpleMarkdownRenderer markdown={result.personalizedMantra} />
-              </div>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-secondary mb-2">Explanation:</h3>
-               <div className="p-4 bg-muted rounded-md">
-                <SimpleMarkdownRenderer markdown={result.explanation} />
-              </div>
-            </div>
           </CardContent>
-          <CardFooter>
-             <p className="text-sm text-muted-foreground">
-              Remember to chant your mantra with devotion and focus. May it bring you closer to your spiritual goals.
-            </p>
-          </CardFooter>
         </Card>
-      )}
-    </div>
+
+        {/* Placeholder for displaying results, errors, or loading states */}
+        {/* {isLoading && (
+          <div className="mt-8 text-center">
+            <Loader2 className="w-12 h-12 text-primary animate-spin mx-auto" />
+            <p className="text-lg text-foreground/80 mt-3">Generating your sacred chant...</p>
+          </div>
+        )}
+
+        {error && (
+          <Card className="mt-8 bg-destructive/10 border-destructive text-destructive p-4">
+            <CardHeader className="p-0">
+              <CardTitle className="flex items-center gap-2 text-lg"><AlertCircle className="w-5 h-5"/> Generation Failed</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0 pt-2 text-sm">
+              {error}
+            </CardContent>
+          </Card>
+        )}
+
+        {generatedMantra && !isLoading && (
+          <Card className="mt-10 shadow-xl border-2 border-primary/30 bg-primary/5">
+            <CardHeader>
+              <CardTitle className="text-2xl text-primary flex items-center gap-3">
+                <Wand2 className="w-7 h-7"/> Your Personalized Sacred Chant
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="whitespace-pre-line text-lg text-foreground/90 font-serif p-6 bg-background rounded-b-xl">
+              {generatedMantra}
+            </CardContent>
+            <CardFooter className="p-4 border-t border-primary/20">
+                <p className="text-xs text-muted-foreground">
+                    This chant was generated by AI. Review and use with discernment. You can refine your input and try again.
+                </p>
+            </CardFooter>
+          </Card>
+        )} */}
+         <Card className="mt-10 shadow-xl border-2 border-primary/30 bg-primary/5">
+            <CardHeader>
+              <CardTitle className="text-2xl text-primary flex items-center gap-3">
+                <Wand2 className="w-7 h-7"/> Personalized Sacred Chant
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="whitespace-pre-line text-lg text-foreground/90 font-serif p-6 bg-background rounded-b-xl min-h-[100px] flex items-center justify-center">
+              <p className="text-muted-foreground italic">Your AI-generated chant will appear here once the feature is fully implemented.</p>
+            </CardContent>
+            <CardFooter className="p-4 border-t border-primary/20">
+                <p className="text-xs text-muted-foreground">
+                    This feature is under development. The AI-generated chant will be reviewed for spiritual appropriateness.
+                </p>
+            </CardFooter>
+          </Card>
+
+        <Card className="mt-16 p-8 bg-muted/30 rounded-xl shadow-lg border border-border/20 text-center" aria-labelledby="guidance-title">
+          <CardTitle id="guidance-title" className="text-xl text-secondary mb-3">Important Guidance</CardTitle>
+          <CardDescription className="text-sm text-foreground/75 max-w-lg mx-auto">
+            While this AI tool can be a source of inspiration, traditional mantras and stotras passed down through lineages hold immense spiritual power. This tool is intended for personal reflection and exploration. Always approach sacred practices with reverence and respect. The generated chants are not substitutes for traditional scriptures or Guru-disciple transmissions.
+          </CardDescription>
+        </Card>
+      </div>
+    </>
   );
 }

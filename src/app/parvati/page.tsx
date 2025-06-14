@@ -1,16 +1,20 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { trideviData, parvatiFormsData } from '@/data/content'; 
+import { trideviData } from '@/data/tridevi-data'; 
+import { parvatiFormsData } from '@/data/parvati-forms-data';
 import type { TrideviDetails, ParvatiForm } from '@/types';
 import { Flower2, Heart, Users, Award, CalendarDays, Star, Shield } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
-const parvatiInfo = trideviData.find(g => g.slug === 'parvati');
+const parvatiInfoBase = trideviData.find(g => g.slug === 'parvati');
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const ogImageUrl = `${siteUrl}/og-images/parvati.jpg`;
 
-const pageTitle = `Maa Parvati - ${parvatiInfo?.aspect || 'The Mother Goddess'}`;
-const pageDescription = parvatiInfo?.introduction || "Explore Maa Parvati, the gentle Mother Goddess, consort of Lord Shiva. Learn about her aspects, forms like Annapurna and Gauri, symbolism, festivals, and stories.";
+const pageTitle = `Maa Parvati - ${parvatiInfoBase?.aspect || 'The Mother Goddess'}`;
+const pageDescription = parvatiInfoBase?.introduction || "Explore Maa Parvati, the gentle Mother Goddess, consort of Lord Shiva. Learn about her aspects, forms like Annapurna and Gauri, symbolism, festivals, and stories.";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -25,7 +29,7 @@ export const metadata: Metadata = {
     url: '/parvati',
     images: [
       {
-        url: `https://picsum.photos/seed/${parvatiInfo?.imageHint || 'parvati-mother-goddess'}/1200/630`, 
+        url: ogImageUrl, 
         width: 1200,
         height: 630,
         alt: 'Maa Parvati - The Mother Goddess',
@@ -35,7 +39,7 @@ export const metadata: Metadata = {
   twitter: {
     title: pageTitle,
     description: pageDescription,
-    images: [`https://picsum.photos/seed/${parvatiInfo?.imageHint || 'parvati-mother-goddess'}/1200/630`],
+    images: [ogImageUrl],
   },
 };
 
@@ -65,7 +69,7 @@ export default function ParvatiPage() {
             <Card className="sticky top-10 shadow-xl rounded-xl overflow-hidden border-2 border-primary/30">
                 <CardHeader className="p-0">
                 <Image
-                    src={`https://picsum.photos/seed/${parvatiDetails.imageHint}/600/700`}
+                    src={parvatiDetails.imageUrl || `https://placehold.co/600x700.png`}
                     alt={parvatiDetails.name}
                     width={600}
                     height={700}
@@ -135,7 +139,7 @@ export default function ParvatiPage() {
             <Card key={form.name} className="hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 flex flex-col">
               <CardHeader className="relative p-0">
                 <Image
-                  src={`https://picsum.photos/seed/${form.imageHint.toLowerCase().replace(/\s+/g, '-')}/400/250`}
+                  src={`https://placehold.co/400x250.png`}
                   alt={form.name}
                   width={400}
                   height={250}

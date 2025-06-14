@@ -20,7 +20,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('theme-fiery'); // Default to fiery theme
+  const [theme, setThemeState] = useState<Theme>('theme-default'); // Default to default (warm) theme
   const [mode, setModeState] = useState<Mode>('dark'); // Default to dark mode
   const [isMounted, setIsMounted] = useState(false);
   const [openMobile, setOpenMobile] = useState(false); // Added for sidebar mobile state, mirrors useSidebar
@@ -32,8 +32,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     if (storedTheme) {
       setThemeState(storedTheme);
     } else {
-      // If no theme is stored, apply the default fiery theme
-      setThemeState('theme-fiery');
+      // If no theme is stored, apply the default (warm) theme
+      setThemeState('theme-default');
     }
 
     if (storedMode) {

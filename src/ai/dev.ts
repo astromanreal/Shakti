@@ -1,4 +1,6 @@
+
 import { config } from 'dotenv';
 config();
 
-import '@/ai/flows/mantra-personalizer.ts';
+// Import your Genkit flows here
+// import './flows/mantra-generator-flow'; // Removed
