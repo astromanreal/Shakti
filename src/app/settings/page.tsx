@@ -2,52 +2,23 @@
 "use client";
 
 import type { ReactNode } from 'react';
+import { useEffect } from 'react'; // Ensure useEffect is imported
 import { useTheme, type Theme } from '@/contexts/theme-provider';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import { Moon, Sun, Palette, Settings as SettingsIcon } from "lucide-react";
-import type { Metadata } from 'next'; // Imported Metadata for type safety, even if not exported directly
+// Metadata import is removed as it's not used for static export
+// import type { Metadata } from 'next'; 
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
 const pageTitle = "Application Settings - Customize Your Shakti Darshan Experience";
 const pageDescription = "Personalize your Shakti Darshan spiritual journey. Choose your preferred color theme, toggle between dark and light mode, and manage other application preferences for an optimal experience.";
-const ogImageUrl = `${siteUrl}/og-images/settings-shakti-darshan.jpg`;
+// const ogImageUrl = `${siteUrl}/og-images/settings-shakti-darshan.jpg`; // Not used if metadata is removed
 
-// Although metadata can't be exported from client components for Next.js to pick up directly,
-// having it defined helps in structuring and can be used if this page were to be pre-rendered or SSR.
-// For client components, dynamic title/meta updates would typically use `useEffect` and direct DOM manipulation if needed,
-// but Next.js's `metadata` object in `layout.tsx` and page-level `metadata` exports from Server Components are preferred.
-
-export const metadata: Metadata = {
-  title: pageTitle,
-  description: pageDescription,
-  keywords: ["settings", "theme customization", "dark mode", "light mode", "preferences", "Shakti Darshan settings", "accessibility", "user experience"],
-  alternates: {
-    canonical: '/settings',
-  },
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: `${siteUrl}/settings`,
-    images: [
-      {
-        url: ogImageUrl, 
-        width: 1200,
-        height: 630,
-        alt: 'Shakti Darshan Application Settings and Theme Customization Page',
-      },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: pageTitle,
-    description: pageDescription,
-    images: [ogImageUrl],
-  },
-};
+// Removed static metadata export:
+// export const metadata: Metadata = { ... };
 
 const themes: { value: Theme; label: string }[] = [
   { value: 'theme-default', label: 'Default (Warm)' },
@@ -60,12 +31,10 @@ const themes: { value: Theme; label: string }[] = [
 export default function SettingsPage() {
   const { theme, setTheme, mode, setMode, isMounted } = useTheme();
 
-  // Effect to update document title if this were the primary way (not recommended for Next.js App Router)
   useEffect(() => {
-    if (isMounted) { // Ensure this runs only on the client
+    if (isMounted) { 
       document.title = pageTitle;
       
-      // Update meta description
       let descriptionTag = document.querySelector('meta[name="description"]');
       if (!descriptionTag) {
         descriptionTag = document.createElement('meta');
@@ -74,7 +43,9 @@ export default function SettingsPage() {
       }
       descriptionTag.setAttribute('content', pageDescription);
 
-      // Similar logic for keywords, OG tags, etc., if not handled by Next.js Metadata API
+      // Note: For full SEO, dynamic meta tags for OG, Twitter, keywords, etc., 
+      // would need to be added here if not handled by a higher-level layout or page.
+      // For simplicity and to fix the immediate error, only title and description are explicitly managed here.
     }
   }, [isMounted]);
 
@@ -176,3 +147,4 @@ export default function SettingsPage() {
     </>
   );
 }
+
