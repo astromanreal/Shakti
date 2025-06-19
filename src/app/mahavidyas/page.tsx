@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { mahavidyaData } from '@/data/mahavidya-data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Zap, WandSparkles, Brain, Type, Shield, BookOpenText, Users2, Heart, Award } from 'lucide-react'; // Added Award
+import { ChevronRight, Zap, WandSparkles, Brain, Type, Shield, BookOpenText, Users2, Heart, Award } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
@@ -60,7 +60,7 @@ export default function MahavidyasPage() {
         "@type": "ListItem",
         "position": index + 1,
         "item": {
-          "@type": "WebPage", // Could be more specific if each Mahavidya has a dedicated schema type
+          "@type": "WebPage",
           "name": mahavidya.name,
           "description": mahavidya.description.substring(0,150) + "...",
           "url": `${siteUrl}/mahavidyas/${mahavidya.slug}`,
@@ -83,52 +83,47 @@ export default function MahavidyasPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
       />
       <div className="container mx-auto px-4 py-8">
-        <section className="relative mb-16 md:mb-20 h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-2xl bg-gradient-to-br from-background via-muted/50 to-card" aria-labelledby="mahavidyas-page-title">
-          <Image
-              src="https://placehold.co/1600x900.png"
-              alt="Das Mahavidyas - Ten Great Wisdom Goddesses Conceptual Art"
-              layout="fill"
-              objectFit="cover"
-              className="opacity-30"
-              data-ai-hint="mahavidyas divine energy cosmic wisdom"
-              priority
-          />
-          <div className="absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-center p-6">
-            <div className="inline-flex items-center justify-center bg-primary/20 p-3 rounded-full mb-4 shadow-md ring-2 ring-primary/30">
-               <Award className="w-10 h-10 text-primary" />
+        <section className="mb-16 md:mb-20 text-center py-12 md:py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5 rounded-2xl shadow-xl border border-primary/20" aria-labelledby="mahavidyas-page-title">
+          <div className="relative z-10">
+            <div className="inline-flex items-center justify-center bg-primary/10 p-4 rounded-full mb-6 shadow-lg ring-4 ring-primary/20">
+               <Award className="w-16 h-16 text-primary" />
             </div>
-            <h1 id="mahavidyas-page-title" className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 tracking-tight drop-shadow-lg">
-              {pageTitle}
+            <h1 id="mahavidyas-page-title" className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-4 tracking-tight">
+              The Das Mahavidyas
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 drop-shadow-md">
-              {pageDescription}
+            <p className="text-xl md:text-2xl text-secondary font-semibold max-w-2xl mx-auto mb-10">
+              Ten Great Wisdoms of Tantra – Paths to Liberation
             </p>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8 py-6 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 focus-visible:ring-accent">
+            <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-10 py-7 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105 focus-visible:ring-accent">
               <Link href="#mahavidya-profiles">Begin Your Journey</Link>
             </Button>
           </div>
         </section>
 
-        <section className="mb-16 py-10 bg-muted/30 rounded-xl shadow-lg border border-border/20" aria-labelledby="cosmic-context-title">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <h2 id="cosmic-context-title" className="text-2xl md:text-3xl font-semibold text-secondary mb-6 flex items-center">
-                  <Brain className="w-8 h-8 mr-3 text-secondary" />
-                  Cosmic Context of the Mahavidyas
-                </h2>
-                <p className="text-lg text-foreground/80 mb-4 leading-relaxed">
-                  The Das Mahavidyas, or Ten Great Wisdoms, are a group of ten aspects of Adi Parashakti in Hinduism. They are all forms of the Divine Mother, representing a spectrum of feminine divinity, from fierce goddesses to the gentle, guiding seekers on various paths to liberation.
+        <section className="mb-16" aria-labelledby="cosmic-context-title">
+           <Card className="shadow-xl rounded-2xl border-2 border-secondary/20 bg-gradient-to-br from-card via-background to-muted/20 overflow-hidden transform transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1.5 hover:scale-[1.01]">
+            <CardHeader className="bg-secondary/5 p-6 sm:p-8">
+                <div className="flex items-start md:items-center gap-4">
+                <div className="bg-secondary/20 p-3 rounded-full ring-2 ring-secondary/30 flex-shrink-0">
+                    <Brain className="w-8 h-8 sm:w-10 sm:h-10 text-secondary" />
+                </div>
+                <CardTitle id="cosmic-context-title" className="text-2xl sm:text-3xl md:text-4xl font-semibold text-secondary tracking-tight">
+                    Cosmic Context of the Mahavidyas
+                </CardTitle>
+                </div>
+            </CardHeader>
+            <CardContent className="p-6 sm:p-8 text-md lg:text-lg text-foreground/90 leading-relaxed">
+                <p className="mb-4">
+                  The Das Mahavidyas, or Ten Great Wisdoms, are a group of ten powerful aspects of Adi Parashakti in Hinduism. They are all forms of the Divine Mother, representing a spectrum of feminine divinity, from fierce goddesses to the gentle, guiding seekers on various paths to liberation.
                 </p>
-                <blockquote className="border-l-4 border-primary pl-4 italic text-foreground/70 my-4 text-md">
+                <blockquote className="border-l-4 border-primary pl-4 italic text-foreground/70 my-6 text-md">
                   “The Ten Mahavidyas arise from Kali herself, each a form of truth, a challenge to ego, and a gateway to liberation.”
                 </blockquote>
-              </div>
-              <div className="hidden md:flex justify-center items-center">
-                 <Image src="https://placehold.co/300x300.png" alt="Symbolic representation of Mahavidya Tantra" width={200} height={200} className="opacity-70 rounded-full" data-ai-hint="mahavidya symbol tantra wisdom"/>
-              </div>
-            </div>
-          </div>
+                <p>
+                  Each Mahavidya embodies a unique facet of cosmic truth and a distinct approach to spiritual understanding. Their worship often involves Tantric practices and profound meditation on their specific energies and forms.
+                </p>
+            </CardContent>
+          </Card>
         </section>
 
         <section id="mahavidya-profiles" className="mb-16" aria-labelledby="wisdom-goddesses-title">
@@ -223,3 +218,5 @@ export default function MahavidyasPage() {
     </>
   );
 }
+
+    

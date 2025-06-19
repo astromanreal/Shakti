@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import {
   Heart, Eye, Zap, BookOpen, Users, CalendarDays, Sparkles, Atom, Layers, Landmark, Palette, Info, MessageSquare, ArrowLeftCircle, Shield, Star, Brain, Link as LinkIcon, BookCopy, Award, ExternalLink, Sword, ShieldCheck, Users2, Gem, Gift, Flame
-} from 'lucide-react';
+} from 'lucide-react'; // Added Link as LinkIcon
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
@@ -149,7 +149,7 @@ export default function MajorFormDetailPage({ params }: FormPageProps) {
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-2 drop-shadow-md tracking-tight">{goddess.name}</h1>
           <p className="text-xl md:text-2xl text-secondary font-semibold mb-4">{goddess.title}</p>
-          {goddess.meaning && <p className="text-sm text-muted-foreground italic mb-2">&ldquo;{goddess.meaning}&rdquo;</p>}
+          {goddess.meaningOfName && <p className="text-sm text-muted-foreground italic mb-2">&ldquo;{goddess.meaningOfName}&rdquo;</p>}
           <p className="text-base md:text-lg text-foreground/80 max-w-3xl mx-auto px-2">
             {goddess.description || goddess.shortDescription}
           </p>
@@ -327,10 +327,10 @@ export default function MajorFormDetailPage({ params }: FormPageProps) {
 
               {(goddess.mantrasAndStotras || goddess.philosophicalInsights) && (
                 <DetailSectionCard title="Deeper Wisdom & Devotion" icon={BookCopy} cardId="wisdom-devotion">
-                  {goddess.mantrasAndStotras && (Array.isArray(goddess.mantrasAndStotras) ? goddess.mantrasAndStotras : (goddess.mantrasAndStotras.mantras || goddess.mantrasAndStotras.stotras)) && (
+                  {goddess.mantrasAndStotras && (Array.isArray(goddess.mantrasAndStotras) ? goddess.mantrasAndStotras : ((goddess.mantrasAndStotras as DetailedMantrasAndStotras).mantras || (goddess.mantrasAndStotras as DetailedMantrasAndStotras).stotras)) && (
                     <>
                       <h4 className="font-semibold text-secondary mb-2">Mantras & Stotras:</h4>
-                      {(Array.isArray(goddess.mantrasAndStotras) ? goddess.mantrasAndStotras : [...(goddess.mantrasAndStotras.mantras || []), ...(goddess.mantrasAndStotras.stotras || [])]).map((item, idx) => (
+                      {(Array.isArray(goddess.mantrasAndStotras) ? goddess.mantrasAndStotras : [...((goddess.mantrasAndStotras as DetailedMantrasAndStotras).mantras || []), ...((goddess.mantrasAndStotras as DetailedMantrasAndStotras).stotras || [])]).map((item, idx) => (
                           <div key={idx} className="mb-3 p-3 border rounded-md bg-muted/30 shadow-sm">
                               <h5 className="font-medium text-primary">{item.name}</h5>
                               {item.sanskrit && <p className="font-mono text-sm text-secondary-foreground bg-secondary/10 p-2 rounded mt-1">{item.sanskrit}</p>}
@@ -354,7 +354,7 @@ export default function MajorFormDetailPage({ params }: FormPageProps) {
                 </DetailSectionCard>
               )}
               
-              {(goddess.culturalInfluence || goddess.relatedDeitiesAndAnimals || goddess.modernRelevance) && (
+              {(goddess.culturalInfluence || (goddess.relatedDeitiesAndAnimals && (goddess.relatedDeitiesAndAnimals.relatedDeities.length > 0 || goddess.relatedDeitiesAndAnimals.associatedAnimals.length > 0)) || goddess.modernRelevance) && (
                 <DetailSectionCard title="Cultural Impact & Connections" icon={Sparkles} cardId="cultural-impact">
                   {goddess.culturalInfluence && (
                     <>
@@ -363,16 +363,16 @@ export default function MajorFormDetailPage({ params }: FormPageProps) {
                           {typeof goddess.culturalInfluence.literature === 'string' ? <li><strong>Literature:</strong> {goddess.culturalInfluence.literature}</li> : (goddess.culturalInfluence.literature && goddess.culturalInfluence.literature.length > 0 && <li><strong>Literature:</strong> {goddess.culturalInfluence.literature.join(', ')}</li>)}
                           {typeof goddess.culturalInfluence.danceForms === 'string' ? <li><strong>Dance Forms:</strong> {goddess.culturalInfluence.danceForms}</li> : (goddess.culturalInfluence.danceForms && goddess.culturalInfluence.danceForms.length > 0 && <li><strong>Dance Forms:</strong> {goddess.culturalInfluence.danceForms.join(', ')}</li>)}
                           {goddess.culturalInfluence.artAndSculpture && <li><strong>Art & Sculpture:</strong> {goddess.culturalInfluence.artAndSculpture}</li>}
-                          {typeof goddess.culturalInfluence.media === 'string' ? <li><strong>Media:</strong> {goddess.culturalInfluence.media}</li> : (goddess.culturalInfluence.media && goddess.culturalInfluence.media.length > 0 && <li><strong>Media:</strong> {goddess.culturalInfluence.media.join(', ')}</li>)}
+                          {typeof goddess.culturalInfluence.moviesAndMedia === 'string' ? <li><strong>Media:</strong> {goddess.culturalInfluence.moviesAndMedia}</li> : (goddess.culturalInfluence.moviesAndMedia && goddess.culturalInfluence.moviesAndMedia.length > 0 && <li><strong>Media:</strong> {goddess.culturalInfluence.moviesAndMedia.join(', ')}</li>)}
                       </ul>
                     </>
                   )}
-                  {goddess.relatedDeitiesAndAnimals && (
+                  {goddess.relatedDeitiesAndAnimals && (goddess.relatedDeitiesAndAnimals.relatedDeities.length > 0 || goddess.relatedDeitiesAndAnimals.associatedAnimals.length > 0) && (
                     <>
                       <Separator className="my-3" />
                       <h4 className="font-semibold text-secondary mb-1.5">Related Deities & Animals:</h4>
-                      <p className="text-xs"><strong>Deities:</strong> {goddess.relatedDeitiesAndAnimals.relatedDeities.join(', ')}.</p>
-                      <p className="text-xs"><strong>Animals:</strong> {goddess.relatedDeitiesAndAnimals.associatedAnimals.join(', ')}.</p>
+                      {goddess.relatedDeitiesAndAnimals.relatedDeities.length > 0 && <p className="text-xs"><strong>Deities:</strong> {goddess.relatedDeitiesAndAnimals.relatedDeities.join(', ')}.</p>}
+                      {goddess.relatedDeitiesAndAnimals.associatedAnimals.length > 0 && <p className="text-xs"><strong>Animals:</strong> {goddess.relatedDeitiesAndAnimals.associatedAnimals.join(', ')}.</p>}
                     </>
                   )}
                   {goddess.modernRelevance && (

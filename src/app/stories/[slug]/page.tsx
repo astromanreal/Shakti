@@ -7,7 +7,7 @@ import {
     BookHeart, Users, ArrowLeftCircle, ChevronRight, Drama, MessageSquare, 
     BookOpenText, Shield, Info, ExternalLink, Link as LinkIcon, CalendarDays, MapPin, 
     Library, Type, Users2 as UsersIconLucide, Sun, Sparkles, FileText, HelpCircle, Milestone, Eye
-} from 'lucide-react';
+} from 'lucide-react'; // Added Link as LinkIcon
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import Link from 'next/link';

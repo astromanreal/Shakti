@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { shaktiPeethaData } from '@/data/shakti-peetha-data';
@@ -9,8 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import {
     Landmark, MapPin, Heart, Zap, Shield, Brain, CalendarDays, Info, ArrowLeftCircle, PackageOpen,
-    Building, Palette, BookOpen, Users, Sprout, Mountain, Clock, Ticket, UserCheck, Camera, Video, ExternalLink, Tag, Rss, Clock10, Construction, Youtube, Users2
-} from 'lucide-react';
+    Building, Palette, BookOpen, Users, Sprout, Mountain, Clock, Ticket, UserCheck, Camera, Video, ExternalLink, Tag, Rss, Clock10, Construction, Youtube, Users2, Link as LinkIcon
+} from 'lucide-react'; // Added Link as LinkIcon
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 

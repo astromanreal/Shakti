@@ -8,7 +8,7 @@ import { Separator } from '@/components/ui/separator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { 
     BookOpenText, Languages, Users, Target, ListChecks, Info, Music, Video, Globe, Mic2, FileText, Brain, Link as LinkIcon, ArrowLeftCircle, BookMarked, ChevronDown, ExternalLink, Volume2, PlayCircle
-} from 'lucide-react';
+} from 'lucide-react'; // Added Link as LinkIcon
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
@@ -332,4 +332,5 @@ export default function SacredChantDetailPage({ params }: SacredChantDetailPageP
     </>
   );
 }
+
 
