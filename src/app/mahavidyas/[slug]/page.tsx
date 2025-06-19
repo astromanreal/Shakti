@@ -4,7 +4,7 @@ import { mahavidyaData } from '@/data/mahavidya-data';
 import type { MahavidyaDetails } from '@/types';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { BookMarked, Zap, Users, Brain, MessageSquare, Star, Shield, CalendarDays, Eye, Lightbulb } from 'lucide-react'; // Added Lightbulb
+import { BookMarked, Zap, Users, Brain, MessageSquare, Star, Shield, CalendarDays, Eye, Lightbulb } from 'lucide-react'; // Added Lightbulb and Star
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
@@ -270,3 +270,4 @@ export default function MahavidyaPage({ params }: MahavidyaPageProps) {
     </>
   );
 }
+

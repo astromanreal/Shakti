@@ -255,7 +255,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
                       <p><strong className="text-secondary">Number of Arms:</strong> {goddess.detailedIconography.numberOfArms}</p>
                       <p><strong className="text-secondary">Mount:</strong> {goddess.detailedIconography.mount}</p>
                       <p><strong className="text-secondary">Posture:</strong> {goddess.detailedIconography.posture}</p>
-                      <p><strong className="text-secondary">Expressions:</strong> {goddess.detailedIconography.expressions.join(', ')}</p>
+                      <p><strong className="text-secondary">Expressions:</strong> {Array.isArray(goddess.detailedIconography.expressions) ? goddess.detailedIconography.expressions.join(', ') : goddess.detailedIconography.expressions}</p>
                   </div>
                   <div className="mt-3">
                       <strong className="text-secondary">{goddess.slug === 'lakshmi' ? 'Common Attributes:' : 'Common Weapons:'}</strong>
@@ -452,10 +452,10 @@ export default function TrideviPage({ params }: TrideviPageProps) {
         {goddess.culturalInfluence && (
           <SectionCard title="Cultural Influence" icon={Group} cardClassName="mb-12">
              <div className="space-y-3 text-md">
-                  {goddess.culturalInfluence.literature && <div><strong className="text-secondary">Literature:</strong> {goddess.culturalInfluence.literature.join(', ')}.</div>}
-                  {goddess.culturalInfluence.danceForms && <div><strong className="text-secondary">Dance Forms:</strong> {goddess.culturalInfluence.danceForms.join(', ')}.</div>}
+                  {goddess.culturalInfluence.literature && <div><strong className="text-secondary">Literature:</strong> {Array.isArray(goddess.culturalInfluence.literature) ? goddess.culturalInfluence.literature.join(', ') : goddess.culturalInfluence.literature }.</div>}
+                  {goddess.culturalInfluence.danceForms && <div><strong className="text-secondary">Dance Forms:</strong> {Array.isArray(goddess.culturalInfluence.danceForms) ? goddess.culturalInfluence.danceForms.join(', ') : goddess.culturalInfluence.danceForms}.</div>}
                   {goddess.culturalInfluence.artAndSculpture && <div><strong className="text-secondary">Art & Sculpture:</strong> {goddess.culturalInfluence.artAndSculpture}.</div>}
-                  {goddess.culturalInfluence.moviesAndMedia && <div><strong className="text-secondary">Movies & Media:</strong> {goddess.culturalInfluence.moviesAndMedia.join(', ')}.</div>}
+                  {goddess.culturalInfluence.moviesAndMedia && <div><strong className="text-secondary">Movies & Media:</strong> {Array.isArray(goddess.culturalInfluence.moviesAndMedia) ? goddess.culturalInfluence.moviesAndMedia.join(', ') : goddess.culturalInfluence.moviesAndMedia }.</div>}
              </div>
           </SectionCard>
         )}
@@ -569,3 +569,4 @@ export default function TrideviPage({ params }: TrideviPageProps) {
     </>
   );
 }
+

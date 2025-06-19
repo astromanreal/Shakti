@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { allMajorFormsDetailedData } from '@/data/all-major-forms-detailed-data';
-import type { OtherMajorFormDetail, MantraStotraItem, FestivalDetail, TempleDetail } from '@/types';
-import { Eye, ShieldCheck, Gem, Gift, Sparkles, Sword, Flame, Heart, Palette, BookOpen, Landmark, Layers, Info, MessageSquare, BookCopy, Award, ExternalLink, Users2, ArrowLeftCircle, ChevronRight } from 'lucide-react';
+import type { OtherMajorFormDetail, MantraStotraItem, FestivalDetail, TempleDetail } from '@/types'; // Added FestivalDetail, TempleDetail
+import { Eye, ShieldCheck, Gem, Gift, Sparkles, Sword, Flame, Heart, Palette, BookOpen, Landmark, Layers, Info, MessageSquare, BookCopy, Award, ExternalLink, Users2, ArrowLeftCircle, ChevronRight, Star } from 'lucide-react'; // Added Star
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
