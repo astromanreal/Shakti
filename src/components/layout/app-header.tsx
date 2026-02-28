@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -19,8 +18,8 @@ import { useTheme } from '@/contexts/theme-provider';
 import { cn } from '@/lib/utils';
 
 export default function AppHeader() {
-  const { isMobile, toggleSidebar } = useSidebar();
-  const { mode, toggleMode, isMounted } = useTheme();
+  const { isMobile, toggleSidebar, isMounted: isSidebarMounted } = useSidebar();
+  const { mode, toggleMode, isMounted: isThemeMounted } = useTheme();
 
   // Simple placeholder for the button's visual space if icon is not ready
   const IconOnlyButtonPlaceholder = () => (
@@ -36,7 +35,7 @@ export default function AppHeader() {
     )}>
       {/* Left Section */}
       <div className="flex items-center gap-2">
-        {isMobile && (
+        {isSidebarMounted && isMobile && (
           <Button variant="ghost" size="icon" onClick={toggleSidebar} aria-label="Toggle sidebar menu">
             <PanelLeft className="h-5 w-5" />
           </Button>
@@ -52,7 +51,7 @@ export default function AppHeader() {
         <TooltipProvider delayDuration={0}>
           <Tooltip>
             <TooltipTrigger asChild>
-              {isMounted ? (
+              {isThemeMounted ? (
                 <Button variant="ghost" size="icon" onClick={toggleMode} aria-label={mode === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}>
                   {mode === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
                 </Button>
@@ -63,7 +62,7 @@ export default function AppHeader() {
                 </div>
               )}
             </TooltipTrigger>
-            {isMounted && ( // Only render content if mounted to avoid content mismatch
+            {isThemeMounted && ( // Only render content if mounted to avoid content mismatch
               <TooltipContent>
                 <p>{mode === 'dark' ? 'Light Mode' : 'Dark Mode'}</p>
               </TooltipContent>
@@ -134,3 +133,5 @@ export default function AppHeader() {
     </header>
   );
 }
+
+    

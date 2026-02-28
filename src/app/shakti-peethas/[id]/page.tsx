@@ -11,7 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import {
     Landmark, MapPin, Heart, Zap, Shield, Brain, CalendarDays, Info, ArrowLeftCircle, PackageOpen,
     Building, Palette, BookOpen, Users, Sprout, Mountain, Clock, Ticket, UserCheck, Camera, Video, ExternalLink, Tag, Rss, Clock10, Construction, Youtube, Users2, Link as LinkIcon
-} from 'lucide-react'; // Added Link as LinkIcon
+} from 'lucide-react';
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
@@ -86,17 +86,17 @@ export async function generateStaticParams() {
 const DetailItem: React.FC<{ label: string; value?: string | string[] | React.ReactNode; icon?: React.ElementType, className?: string, valueClassName?: string }> = ({ label, value, icon: Icon, className, valueClassName }) => {
   if (!value || (Array.isArray(value) && value.length === 0)) return null;
   return (
-    <div className={cn("mb-2.5", className)}>
-      <h4 className="text-sm font-semibold text-secondary flex items-center gap-1.5 mb-0.5">
+    <div className={cn("mb-3", className)}>
+      <h4 className="text-sm font-semibold text-muted-foreground flex items-center gap-1.5 mb-0.5">
         {Icon && <Icon className="w-4 h-4 text-secondary/80" />}
         {label}:
       </h4>
       {Array.isArray(value) ? (
-        <ul className="list-disc list-inside pl-2 space-y-0.5 text-sm text-foreground/80">
+        <ul className="list-disc list-inside pl-2 space-y-0.5 text-sm text-foreground/90">
           {value.map((item, index) => <li key={index}>{item}</li>)}
         </ul>
       ) : (
-        <div className={cn("text-sm text-foreground/80", valueClassName)}>{value}</div>
+        <div className={cn("text-base text-foreground/90", valueClassName)}>{value}</div>
       )}
     </div>
   );
@@ -198,29 +198,23 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
         </header>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
-            {/* Left Sticky Column */}
             <div className="lg:col-span-4 xl:col-span-3 lg:sticky lg:top-20 space-y-6">
                 <Card className="shadow-xl rounded-xl border-2 border-primary/20 bg-card overflow-hidden">
-                    <CardContent className="p-5 space-y-2 text-base">
-                        <DetailItem label="Body Part" value={peetha.bodyPart} icon={Heart} />
+                    <CardHeader className="bg-primary/5 border-b border-primary/20">
+                      <CardTitle className="text-lg text-primary flex items-center gap-2">
+                        <Zap className="w-5 h-5"/> Divine Manifestations
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="p-5 space-y-4">
+                        <DetailItem label="Body Part of Sati" value={peetha.bodyPart} icon={Heart} />
                         <div>
                             <DetailItem label="Shakti Form" value={peetha.shakti} icon={Zap} />
-                            {peetha.shaktiDetail?.description && <p className="text-xs text-muted-foreground ml-6 -mt-1.5">{peetha.shaktiDetail.description}</p>}
+                            {peetha.shaktiDetail?.description && <p className="text-xs text-muted-foreground ml-6 -mt-2">{peetha.shaktiDetail.description}</p>}
                         </div>
                         <div>
                             <DetailItem label="Bhairava Form" value={peetha.bhairava} icon={Shield} />
-                            {peetha.bhairavaDetail?.description && <p className="text-xs text-muted-foreground ml-6 -mt-1.5">{peetha.bhairavaDetail.description}</p>}
+                            {peetha.bhairavaDetail?.description && <p className="text-xs text-muted-foreground ml-6 -mt-2">{peetha.bhairavaDetail.description}</p>}
                         </div>
-                        <DetailItem label="Temple Type" value={peetha.templeType} icon={Building}/>
-                        <DetailItem label="Main Festival" value={peetha.associatedFestival} icon={CalendarDays}/>
-                        {(peetha.detailedLocation?.coordinates || peetha.coordinates) && (
-                             <DetailItem 
-                                label="Coordinates" 
-                                value={`${(peetha.detailedLocation?.coordinates?.latitude || peetha.coordinates?.lat)?.toFixed(4)}, ${(peetha.detailedLocation?.coordinates?.longitude || peetha.coordinates?.lng)?.toFixed(4)}`} 
-                                icon={MapPin} 
-                                valueClassName="font-mono text-xs"
-                             />
-                        )}
                     </CardContent>
                 </Card>
 
@@ -234,16 +228,15 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                 )}
             </div>
 
-            {/* Right Scrollable Content */}
             <div className="lg:col-span-8 xl:col-span-9 space-y-6 md:space-y-8">
                 {(peetha.significance || peetha.templeSignificance) && (
-                  <SectionCard title="Significance" icon={Brain} cardId="significance">
+                  <SectionCard title="Significance of the Peetha" icon={Brain} cardId="significance">
                       {Array.isArray(peetha.significance) ? (
-                          <ul className="list-disc list-inside space-y-2 text-lg leading-relaxed">
+                          <ul className="list-disc list-inside space-y-2 text-md leading-relaxed">
                               {peetha.significance.map((item, index) => <li key={index}>{item}</li>)}
                           </ul>
                       ) : (
-                          <p className="whitespace-pre-line text-lg leading-relaxed">{peetha.significance || peetha.templeSignificance}</p>
+                          <p className="whitespace-pre-line text-md leading-relaxed">{peetha.significance || peetha.templeSignificance}</p>
                       )}
                   </SectionCard>
                 )}
@@ -265,9 +258,9 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                 )}
 
                 {peetha.mythology && (
-                    <SectionCard title="Mythology" icon={BookOpen} cardId="mythology">
-                        <DetailItem label="Legend" value={peetha.mythology.story} icon={Rss} valueClassName="text-md leading-relaxed"/>
-                        <Separator className="my-3 bg-border/30"/>
+                    <SectionCard title="Mythology & Legend" icon={BookOpen} cardId="mythology">
+                        <DetailItem label="The Legend" value={peetha.mythology.story} icon={Rss} valueClassName="text-md leading-relaxed"/>
+                        <Separator className="my-4 bg-border/30"/>
                         <DetailItem label="Symbolism" value={peetha.mythology.symbolism} icon={Brain} valueClassName="text-md leading-relaxed"/>
                     </SectionCard>
                 )}
@@ -283,17 +276,6 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                 {peetha.architecture && (
                     <SectionCard title="Temple Architecture" icon={Building} cardId="architecture">
                         <p className="text-md leading-relaxed">{peetha.architecture}</p>
-                    </SectionCard>
-                )}
-
-                {peetha.templeFeatures && (
-                    <SectionCard title="Temple Features" icon={Palette} cardId="temple-features">
-                        <DetailItem label="Architecture Style" value={peetha.templeFeatures.architecture} />
-                        <DetailItem label="Main Shrine Details" value={peetha.templeFeatures.mainShrine} />
-                        {peetha.templeFeatures.waterPresence && <DetailItem label="Sacred Water Body" value={peetha.templeFeatures.waterPresence} />}
-                        {peetha.templeFeatures.otherShrines && peetha.templeFeatures.otherShrines.length > 0 && (
-                            <DetailItem label="Other Shrines" value={peetha.templeFeatures.otherShrines} />
-                        )}
                     </SectionCard>
                 )}
 
@@ -317,32 +299,8 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                     </SectionCard>
                 )}
                 
-                {peetha.spiritualPractices && peetha.spiritualPractices.length > 0 && (
-                    <SectionCard title="Spiritual Practices" icon={Users} cardId="spiritual-practices">
-                        <ul className="list-disc list-inside space-y-1.5 text-md">
-                            {peetha.spiritualPractices.map((practice, index) => <li key={index}>{practice}</li>)}
-                        </ul>
-                    </SectionCard>
-                )}
-
-                {peetha.historicalNotes && peetha.historicalNotes.length > 0 && (
-                     <SectionCard title="Historical Notes" icon={Clock10} cardId="historical-notes">
-                        <ul className="list-disc list-inside space-y-1.5 text-md">
-                            {peetha.historicalNotes.map((note, index) => <li key={index}>{note}</li>)}
-                        </ul>
-                    </SectionCard>
-                )}
-
-                 {peetha.culturalImpact && peetha.culturalImpact.length > 0 && (
-                    <SectionCard title="Cultural Impact" icon={Mountain} cardId="cultural-impact">
-                       <ul className="list-disc list-inside space-y-1.5 text-md">
-                            {peetha.culturalImpact.map((impact, index) => <li key={index}>{impact}</li>)}
-                        </ul>
-                    </SectionCard>
-                )}
-                
                 {peetha.accessibility && (
-                    <SectionCard title="Accessibility" icon={Info} cardId="accessibility">
+                    <SectionCard title="How to Reach" icon={Info} cardId="accessibility">
                         <DetailItem label="Nearest Airport" value={peetha.accessibility.nearestAirport} />
                         <DetailItem label="Nearest Railway Station" value={peetha.accessibility.nearestRailway || peetha.accessibility.nearestRailwayStation} />
                         <DetailItem label="Local Transportation" value={peetha.accessibility.transportation || peetha.accessibility.localTransport} />
@@ -360,24 +318,28 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                 )}
                 
                 {peetha.resources && (
-                  <SectionCard title="Resources" icon={PackageOpen} cardId="resources">
+                  <SectionCard title="Explore Further" icon={PackageOpen} cardId="resources">
                     <div className="space-y-4">
                       {peetha.resources.officialWebsite && (
                         <div>
                           <h4 className="text-md font-semibold text-secondary mb-2">Official Website:</h4>
-                          <Link href={peetha.resources.officialWebsite} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
-                            <ExternalLink className="w-3.5 h-3.5" />
-                            Visit Official Site
-                          </Link>
+                          <Button asChild variant="link" className="p-0 h-auto">
+                            <Link href={peetha.resources.officialWebsite} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
+                              <ExternalLink className="w-3.5 h-3.5" />
+                              Visit Official Site
+                            </Link>
+                          </Button>
                         </div>
                       )}
                       {peetha.resources.wikipedia && (
                         <div className={cn(peetha.resources.officialWebsite && "mt-4 pt-4 border-t border-border/20")}>
                           <h4 className="text-md font-semibold text-secondary mb-2">Wikipedia:</h4>
-                          <Link href={peetha.resources.wikipedia} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
-                            <ExternalLink className="w-3.5 h-3.5" />
-                            Read on Wikipedia
-                          </Link>
+                           <Button asChild variant="link" className="p-0 h-auto">
+                            <Link href={peetha.resources.wikipedia} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
+                              <ExternalLink className="w-3.5 h-3.5" />
+                              Read on Wikipedia
+                            </Link>
+                          </Button>
                         </div>
                       )}
                       {peetha.resources.officialLinks && peetha.resources.officialLinks.length > 0 && (
@@ -386,10 +348,12 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                           <ul className="space-y-1.5">
                             {peetha.resources.officialLinks.map((link: ResourceLink, index: number) => (
                               <li key={index}>
-                                <Link href={link.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
-                                  <ExternalLink className="w-3.5 h-3.5" />
-                                  {link.title}
-                                </Link>
+                                <Button asChild variant="link" className="p-0 h-auto">
+                                  <Link href={link.url} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
+                                    <ExternalLink className="w-3.5 h-3.5" />
+                                    {link.title}
+                                  </Link>
+                                </Button>
                               </li>
                             ))}
                           </ul>
@@ -398,10 +362,12 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                       {peetha.resources.map && (
                         <div className={cn( (peetha.resources.officialWebsite || peetha.resources.wikipedia || (peetha.resources.officialLinks && peetha.resources.officialLinks.length > 0) ) && "mt-4 pt-4 border-t border-border/20")}>
                           <h4 className="text-md font-semibold text-secondary mb-2">Map Location:</h4>
-                          <Link href={peetha.resources.map} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
-                            <MapPin className="w-3.5 h-3.5" />
-                            View on Google Maps
-                          </Link>
+                           <Button asChild variant="link" className="p-0 h-auto">
+                            <Link href={peetha.resources.map} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline hover:text-accent-foreground transition-colors text-sm flex items-center gap-1.5">
+                              <MapPin className="w-3.5 h-3.5" />
+                              View on Google Maps
+                            </Link>
+                          </Button>
                         </div>
                       )}
                       <div className={cn( (peetha.resources.officialWebsite || peetha.resources.wikipedia || (peetha.resources.officialLinks && peetha.resources.officialLinks.length > 0) || peetha.resources.map) && "mt-4 pt-4 border-t border-border/20")}>
@@ -414,20 +380,11 @@ export default function ShaktiPeethaDetailPage({ params }: ShaktiPeethaDetailPag
                     </div>
                   </SectionCard>
                 )}
-            </div> {/* End of Right Scrollable Content's main div */}
-          </div> {/* End of main grid lg:grid-cols-12 */}
-        
-        <Separator className="my-12 bg-border/40" />
-
-        <div className="text-center mt-10">
-            <Button asChild variant="default" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-md hover:shadow-lg">
-                <Link href="/shakti-peethas">
-                <ArrowLeftCircle className="w-5 h-5 mr-2" />
-                Back to All Shakti Peethas
-                </Link>
-            </Button>
-        </div>
+            </div>
+          </div>
       </div>
     </>
   );
 }
+
+    

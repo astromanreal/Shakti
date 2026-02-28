@@ -1,7 +1,4 @@
 
-"use client";
-
-import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { divineStoriesData } from '@/data/divine-stories-data';
@@ -12,89 +9,37 @@ import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
+import type { Metadata } from 'next';
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
 const pageTitle = "Divine Stories of Maa Shakti - Puranic & Epic Tales";
 const pageDescription = "Explore captivating tales from Puranas, Itihasas, and folk traditions featuring Maa Adi Shakti and her diverse forms. Discover stories of Durga, Kali, Sati, and more, illuminating the power of the Divine Feminine.";
 const ogImageUrl = `${siteUrl}/og-images/divine-stories-shakti-darshan.jpg`;
 
+export const metadata: Metadata = {
+  title: pageTitle,
+  description: pageDescription,
+  keywords: ["Divine Stories", "Puranic Tales", "Hindu Mythology", "Shakti Stories", "Goddess Durga", "Maa Kali", "Devi Sati", "Mahishasura Mardini", "Daksha Yagna"],
+  alternates: {
+    canonical: '/stories',
+  },
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: `${siteUrl}/stories`,
+    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: 'Divine Stories of Maa Shakti' }],
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: pageTitle,
+    description: pageDescription,
+    images: [ogImageUrl],
+  },
+};
+
 
 export default function StoriesPage() {
-  const [filteredStories, setFilteredStories] = useState<DivineStory[]>(divineStoriesData);
-  const [selectedDeity, setSelectedDeity] = useState<string>("all");
-  const [selectedSource, setSelectedSource] = useState<string>("all");
-  const [selectedTheme, setSelectedTheme] = useState<string>("all");
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    // Client-side document title update
-    document.title = pageTitle + " | Shakti Darshan";
-  }, []);
-
-  const uniqueDeities = useMemo(() => {
-    if (!isMounted) return [];
-    const allDeities = divineStoriesData.flatMap(story => {
-      if (!story.keyFigures) return [];
-      return story.keyFigures.map(figure => typeof figure === 'string' ? figure : figure.name).filter(Boolean);
-    });
-    const deityCounts: Record<string, number> = {};
-    allDeities.forEach(deity => {
-      deityCounts[deity] = (deityCounts[deity] || 0) + 1;
-    });
-    const commonDeities = Object.entries(deityCounts)
-      .filter(([deity, count]) => count > 0)
-      .map(([deity]) => deity)
-      .sort((a,b) => a.localeCompare(b));
-    return ["all", ...Array.from(new Set(commonDeities))];
-  }, [isMounted]);
-
-  const uniqueSources = useMemo(() => {
-    if (!isMounted) return [];
-    const allSources = divineStoriesData.map(story => {
-      if (typeof story.source === 'object' && story.source?.name) {
-        return story.source.name;
-      }
-      return story.source as string;
-    });
-    return ["all", ...Array.from(new Set(allSources.filter(Boolean))).sort((a,b) => a.localeCompare(b))];
-  }, [isMounted]);
-
-  const uniqueThemes = useMemo(() => {
-    if (!isMounted) return [];
-    const allThemes = divineStoriesData.flatMap(story => story.themes || []);
-    return ["all", ...Array.from(new Set(allThemes)).sort((a,b) => a.localeCompare(b))];
-  }, [isMounted]);
-
-  useEffect(() => {
-    if (!isMounted) return;
-    let stories = divineStoriesData;
-
-    if (selectedDeity !== "all") {
-      stories = stories.filter(story =>
-        story.keyFigures?.some(figure => (typeof figure === 'string' ? figure : figure.name) === selectedDeity)
-      );
-    }
-    if (selectedSource !== "all") {
-      stories = stories.filter(story => {
-        if (typeof story.source === 'object' && story.source?.name) {
-          return story.source.name === selectedSource;
-        }
-        return story.source === selectedSource;
-      });
-    }
-    if (selectedTheme !== "all") {
-      stories = stories.filter(story => story.themes?.includes(selectedTheme));
-    }
-    setFilteredStories(stories);
-  }, [selectedDeity, selectedSource, selectedTheme, isMounted]);
-
-  const handleClearFilters = () => {
-    setSelectedDeity("all");
-    setSelectedSource("all");
-    setSelectedTheme("all");
-  };
-  
   const collectionPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -135,14 +80,6 @@ export default function StoriesPage() {
     }
   };
 
-  if (!isMounted) {
-    return (
-      <div className="container mx-auto px-4 py-8 flex justify-center items-center min-h-[calc(100vh-10rem)]">
-        <BookHeart className="w-16 h-16 text-primary animate-pulse" />
-      </div>
-    );
-  }
-
   return (
     <>
       <script
@@ -161,68 +98,10 @@ export default function StoriesPage() {
             {pageDescription}
           </p>
         </header>
-
-        <Card className="mb-12 p-4 md:p-6 bg-muted/30 border border-border/20 rounded-xl shadow-lg">
-          <CardHeader className="p-0 pb-4 md:flex md:flex-row md:items-center md:justify-between">
-            <CardTitle className="text-xl md:text-2xl text-secondary flex items-center gap-2 mb-4 md:mb-0">
-              <Filter className="w-6 h-6" /> Filter Divine Narratives
-            </CardTitle>
-             <Button
-              variant="outline"
-              size="sm"
-              onClick={handleClearFilters}
-              className="border-destructive text-destructive hover:bg-destructive/10 hover:text-destructive-foreground"
-              aria-label="Clear all filters"
-            >
-              <RotateCcw className="w-4 h-4 mr-2" /> Clear Filters
-            </Button>
-          </CardHeader>
-          <CardContent className="p-0 grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-            <div>
-              <label htmlFor="deity-filter" className="block text-sm font-medium text-foreground mb-1.5">Filter by Deity</label>
-              <Select value={selectedDeity} onValueChange={setSelectedDeity}>
-                <SelectTrigger id="deity-filter" className="w-full bg-background shadow-sm text-base border-border focus:border-primary h-11">
-                  <SelectValue placeholder="All Deities" />
-                </SelectTrigger>
-                <SelectContent>
-                  {uniqueDeities.map(deity => (
-                    <SelectItem key={deity} value={deity} className="text-base py-2 capitalize">{deity === 'all' ? 'All Deities' : deity}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label htmlFor="source-filter" className="block text-sm font-medium text-foreground mb-1.5">Filter by Source</label>
-              <Select value={selectedSource} onValueChange={setSelectedSource}>
-                <SelectTrigger id="source-filter" className="w-full bg-background shadow-sm text-base border-border focus:border-primary h-11">
-                  <SelectValue placeholder="All Sources" />
-                </SelectTrigger>
-                <SelectContent>
-                  {uniqueSources.map(source => (
-                    <SelectItem key={source} value={source} className="text-base py-2 capitalize">{source === 'all' ? 'All Sources' : source}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-            <div>
-              <label htmlFor="theme-filter" className="block text-sm font-medium text-foreground mb-1.5">Filter by Theme</label>
-              <Select value={selectedTheme} onValueChange={setSelectedTheme}>
-                <SelectTrigger id="theme-filter" className="w-full bg-background shadow-sm text-base border-border focus:border-primary h-11">
-                  <SelectValue placeholder="All Themes" />
-                </SelectTrigger>
-                <SelectContent>
-                  {uniqueThemes.map(theme => (
-                    <SelectItem key={theme} value={theme} className="text-base py-2 capitalize">{theme === 'all' ? 'All Themes' : theme}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-          </CardContent>
-        </Card>
         
-        {filteredStories.length > 0 ? (
+        {divineStoriesData.length > 0 ? (
           <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredStories.map((story) => (
+            {divineStoriesData.map((story) => (
               <Card 
                 key={story.slug} 
                 className="shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.015] bg-card rounded-2xl overflow-hidden flex flex-col group border border-border/30 hover:border-primary/40"
@@ -272,9 +151,6 @@ export default function StoriesPage() {
               <p className="text-lg text-muted-foreground">
                 No stories match your current filter selection. Please try different filters or reset them.
               </p>
-               <Button variant="outline" onClick={handleClearFilters} className="mt-6">
-                <RotateCcw className="w-4 h-4 mr-2" /> Reset Filters
-              </Button>
           </Card>
         )}
         

@@ -7,7 +7,7 @@ import {
     BookHeart, Users, ArrowLeftCircle, ChevronRight, Drama, MessageSquare, 
     BookOpenText, Shield, Info, ExternalLink, Link as LinkIcon, CalendarDays, MapPin, 
     Library, Type, Users2 as UsersIconLucide, Sun, Sparkles, FileText, HelpCircle, Milestone, Eye
-} from 'lucide-react'; // Added Link as LinkIcon
+} from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -156,23 +156,16 @@ export default function StoryPage({ params }: StoryPageProps) {
 
                 {story.verseHighlight && story.verseHighlight.verses.length > 0 && (
                     <SectionWrapper title={story.verseHighlight.title || "Sacred Verses"} icon={MessageSquare} cardId="verse-highlight">
-                         <Accordion type="single" collapsible className="w-full" defaultValue="verse-section">
-                            <AccordionItem value="verse-section" className="border-none">
-                                <AccordionTrigger className="text-lg font-semibold text-accent hover:text-accent/80 hover:no-underline py-3 px-1">
-                                    View Verses & Translation
-                                </AccordionTrigger>
-                                <AccordionContent className="pt-2 space-y-4">
-                                    {story.verseHighlight.verses.map((verse, index) => (
-                                        <div key={index} className="p-3 border-l-4 border-accent/50 bg-accent/5 rounded-r-md">
-                                            <p className="font-serif text-md text-accent-foreground/90 whitespace-pre-line mb-1">{verse}</p>
-                                            {story.verseHighlight.translation && story.verseHighlight.translation[index] && (
-                                                <p className="text-sm italic text-muted-foreground">{story.verseHighlight.translation[index]}</p>
-                                            )}
-                                        </div>
-                                    ))}
-                                </AccordionContent>
-                            </AccordionItem>
-                        </Accordion>
+                        <div className="space-y-4">
+                            {story.verseHighlight.verses.map((verse, index) => (
+                                <div key={index} className="p-4 border-l-4 border-accent/50 bg-accent/5 rounded-r-md">
+                                    <p className="font-serif text-lg text-accent-foreground/90 whitespace-pre-line mb-1">{verse}</p>
+                                    {story.verseHighlight.translation && story.verseHighlight.translation[index] && (
+                                        <p className="text-md italic text-muted-foreground">{story.verseHighlight.translation[index]}</p>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
                     </SectionWrapper>
                 )}
 
@@ -211,7 +204,7 @@ export default function StoryPage({ params }: StoryPageProps) {
                 {story.locationsAssociated && story.locationsAssociated.length > 0 && (
                     <SectionWrapper title="Associated Sacred Locations" icon={MapPin} cardId="associated-locations">
                         {story.locationsAssociated.map(loc => (
-                            <div key={loc.name} className="mb-2 p-2 border-b border-border/20 last:border-b-0">
+                            <div key={loc.name} className="mb-2 p-3 border-b border-border/20 last:border-b-0 last:pb-0">
                                 <p className="font-semibold text-primary">{loc.name}</p>
                                 <p className="text-xs text-muted-foreground">{loc.significance}</p>
                             </div>
@@ -225,7 +218,7 @@ export default function StoryPage({ params }: StoryPageProps) {
                             <div className="mt-2">
                                 <strong className="text-secondary">Key Symbols:</strong>
                                 <div className="flex flex-wrap gap-2 mt-1">
-                                    {story.visualRepresentation.symbols.map(symbol => <Badge key={symbol} variant="outline">{symbol}</Badge>)}
+                                    {story.visualRepresentation.symbols.map(symbol => <Badge key={symbol} variant="outline" className="border-secondary/50 text-secondary">{symbol}</Badge>)}
                                 </div>
                             </div>
                         )}
@@ -236,12 +229,12 @@ export default function StoryPage({ params }: StoryPageProps) {
             <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-20">
                 {story.keyFigures && story.keyFigures.length > 0 && (
                     <SectionWrapper title="Key Figures" icon={UsersIconLucide} cardId="key-figures">
-                        <ul className="space-y-2.5">
+                        <ul className="space-y-3">
                         {Array.isArray(story.keyFigures) && story.keyFigures.map((figure, index) => {
                             const name = typeof figure === 'string' ? figure : figure.name;
                             const role = typeof figure === 'string' ? '' : figure.role;
                             return (
-                            <li key={index} className="p-2.5 bg-muted/40 rounded-md shadow-sm">
+                            <li key={index} className="p-3 bg-muted/40 rounded-md shadow-sm border border-border/20">
                                 <p className="font-semibold text-secondary">{name}</p>
                                 {role && <p className="text-xs text-muted-foreground italic">{role}</p>}
                             </li>
@@ -325,5 +318,6 @@ export default function StoryPage({ params }: StoryPageProps) {
     </>
   );
 }
+
 
     

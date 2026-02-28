@@ -85,7 +85,7 @@ export default function ContactPage() {
             Connect With Us
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto">
-            We&apos;re thrilled to hear from you! Whether you have questions, feedback, or just want to say hello, here’s how you can reach out.
+            We're thrilled to hear from you! Whether you have questions, feedback, or just want to say hello, here’s how you can reach out.
           </p>
         </header>
 

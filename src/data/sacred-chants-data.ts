@@ -58,178 +58,185 @@ const mahishasuraMardiniStotramVerses: VerseDetail[] = [
 const argalaStotramVerses: VerseDetail[] = [
     {
       verse_number: 1,
-      sanskrit: "ॐ जयन्ती मङ्गला काली भद्रकाली कपालिनी ।\nदुर्गा क्षमा शिवा धात्री स्वाहा स्वधा नमोऽस्तु ते ॥",
-      hindi: "ॐ जयन्ती, मङ्गला, काली, भद्रकाली, कपालिनी, दुर्गा, क्षमा, शिवा, धात्री, स्वाहा, स्वधा—आपको नमस्कार है।",
-      english: "Om. Salutations to You, O Goddess, who is Jayanti (Victorious), Mangala (Auspicious), Kali (Dark One), Bhadrakali (Gentle Kali), Kapalini (Skull-bearer), Durga (Remover of Difficulties), Kshama (Forgiveness), Shiva (Auspicious), Dhatri (Supporter), Svaha (Receiver of Sacrifices), and Svadha (Receiver of Offerings to Ancestors).",
-      explanation: "This verse is an invocation to the various forms and attributes of the Goddess, acknowledging her as the embodiment of all divine qualities and the ultimate receiver of offerings."
+      sanskrit: "ॐ अस्य श्री अर्गलास्तोत्रमन्त्रस्य विष्णुर्ऋषिः अनुष्टुप्छन्दः श्रीमहालक्ष्मीर्देवता श्रीजगदम्बाप्रीतये सप्तशतीपाठाङ्गत्वेन जपे विनियोगः॥",
+      hindi: "ॐ इस श्री अर्गला स्तोत्र मंत्र के ऋषि विष्णु हैं, अनुष्टुप् छन्द है, श्रीमहालक्ष्मी देवता हैं। श्रीजगदम्बा की प्रसन्नता के लिए सप्तशती पाठ के अंग के रूप में इसका जप किया जाता है।",
+      english: "Om. The Rishi (sage) of this Argala Stotram is Vishnu, the meter is Anushtup, the deity is Shri Mahalakshmi. It is chanted as a part of the Saptashati recitation for the pleasure of Shri Jagadamba.",
+      explanation: "This is the 'Viniyoga' or introductory declaration. It sets the intention, stating the hymn's spiritual lineage (seer, meter, deity) and its purpose: to please the Universal Mother as a component of the Devi Mahatmyam recitation."
     },
     {
       verse_number: 2,
-      sanskrit: "जय त्वं देवि चामुण्डे जय भूतार्तिहारिणि ।\nजय सर्वगते देवि कालरात्रि नमोऽस्तु ते ॥",
-      hindi: "हे देवी चामुण्डा, आपको जय हो; हे भूतों के कष्टों का हरण करने वाली, आपको जय हो; हे सर्वव्यापी देवी कालरात्रि, आपको नमस्कार है।",
-      english: "Victory to You, O Goddess Chamunda! Victory to You, O Remover of the sufferings of beings! Victory to You, O All-pervading Goddess Kalaratri! Salutations to You.",
-      explanation: "This verse praises the Goddess in her fierce forms, acknowledging her power to remove sufferings and her omnipresence."
+      sanskrit: "जय त्वं देवि चामुण्डे जय भूतार्तिहारिणि।\nजय सर्वगते देवि कालरात्रि नमोऽस्तु ते॥",
+      hindi: "हे देवी चामुण्डा, आपकी जय हो! हे प्राणियों के कष्ट हरने वाली, आपकी जय हो! हे सर्वव्यापी देवी, हे कालरात्रि! आपको नमस्कार है।",
+      english: "Victory to you, O Devi Chamunda! Victory to you, the remover of the afflictions of all beings. Victory to you, the all-pervading Devi. O Kalaratri (Night of Time), salutations to you.",
+      explanation: "The hymn begins with praises to the fierce and protective forms of the Goddess. Chamunda is the slayer of demons Chanda and Munda, 'Bhutartiharini' is she who ends suffering, and 'Kalaratri' is the dark night of dissolution, signifying her absolute power over time and existence."
     },
     {
       verse_number: 3,
-      sanskrit: "मधुकैटभविद्रावि विधातृवरदे नमः ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे मधु और कैटभ का विनाश करने वाली, विधाता को वर देने वाली देवी, आपको नमस्कार है। मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "Salutations to the Goddess who destroyed Madhu and Kaitabha and granted boons to the Creator. Grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse refers to the Goddess's role in slaying the demons Madhu and Kaitabha, symbolizing the removal of ignorance and ego, and her benevolence in granting boons."
+      sanskrit: "जयन्ती मङ्गला काली भद्रकाली कपालिनी।\nदुर्गा क्षमा शिवा धात्री स्वाहा स्वधा नमोऽस्तु ते॥",
+      hindi: "जयन्ती, मंगला, काली, भद्रकाली, कपालिनी, दुर्गा, क्षमा, शिवा, धात्री, स्वाहा और स्वधा के रूप में प्रसिद्ध हे देवी, आपको नमस्कार है।",
+      english: "Salutations to you, O Devi, who is known as Jayanti (Victorious), Mangala (Auspicious), Kali (Dark One), Bhadrakali (Gentle Kali), Kapalini (Skull-bearer), Durga (Remover of Difficulties), Kshama (Forgiveness), Shiva (Auspicious), Dhatri (Supporter), Svaha (Sacrificial Offering), and Svadha (Offering to Ancestors).",
+      explanation: "This famous verse lists eleven powerful names of the Goddess, each representing a core function. It acknowledges her as the source of victory, auspiciousness, destruction of ego, forgiveness, and universal support."
     },
     {
       verse_number: 4,
-      sanskrit: "महिषासुरनिर्णाशि भक्तानां सुखदे नमः ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे महिषासुर का नाश करने वाली, भक्तों को सुख देने वाली देवी, आपको नमस्कार है। मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "Salutations to the Goddess who annihilated Mahishasura and grants happiness to her devotees. Grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse celebrates the Goddess's victory over the demon Mahishasura, representing the triumph of good over evil, and her compassion towards devotees."
+      sanskrit: "मधुकैटभविद्रावि विधातृवरदे नमः।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "मधु और कैटभ का नाश करने वाली तथा ब्रह्माजी को वरदान देने वाली हे देवी! आपको नमस्कार है। आप मुझे रूप (आत्म-स्वरूप का ज्ञान), जय (विजय), यश (कीर्ति) दें और मेरे शत्रुओं का नाश करें।",
+      english: "Salutations to the one who defeated Madhu and Kaitabha and gave a boon to the Creator (Brahma). Grant me form (spiritual beauty), grant me victory, grant me fame, and destroy my enemies (inner and outer).",
+      explanation: "This verse begins the central prayer of the Argala Stotram. It asks the Goddess for four key boons: 'Rupam' (a divine form or self-realization), 'Jayam' (victory in spiritual and worldly battles), 'Yasho' (glory and good reputation), and the destruction of 'Dvishah' (hostile forces, both internal like ego and external)."
     },
     {
       verse_number: 5,
-      sanskrit: "रक्तबीजवधे देवि चण्डमुण्डविनाशिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे रक्तबीज का वध करने वाली, चण्ड और मुण्ड का नाश करने वाली देवी, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Goddess, slayer of Raktabija and destroyer of Chanda and Munda, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse highlights the Goddess's role in defeating formidable demons, symbolizing the destruction of proliferating negative tendencies."
+      sanskrit: "महिषासुरनिर्णाशि भक्तानां सुखदे नमः।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "महिषासुर का संहार करने वाली और भक्तों को सुख देने वाली हे देवी! आपको नमस्कार है। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "Salutations to the annihilator of Mahishasura, who grants happiness to her devotees. Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "The prayer continues, invoking her most famous feat: the slaying of the buffalo-demon Mahishasura. This act symbolizes the conquest of tamasic (ignorant and brutish) forces."
     },
     {
       verse_number: 6,
-      sanskrit: "शुम्भस्यैव निशुम्भस्य धूम्राक्षस्य च मर्दिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे शुम्भ, निशुम्भ और धूम्राक्ष का संहार करने वाली देवी, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Destroyer of Shumbha, Nishumbha, and Dhumraksha, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse acknowledges the Goddess's power in overcoming powerful adversaries, representing the conquest over arrogance and ignorance."
+      sanskrit: "रक्तबीजवधे देवि चण्डमुण्डविनाशिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे देवी! रक्तबीज का वध करने वाली और चण्ड-मुण्ड का विनाश करने वाली! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Devi, the slayer of Raktabija and the destroyer of Chanda and Munda! Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "This verse recalls her victories over other powerful demons. The slaying of Raktabija (whose blood drops created more demons) signifies her power to destroy infinitely multiplying negative thoughts and karma."
     },
     {
       verse_number: 7,
-      sanskrit: "वन्दिताङ्घ्रियुगे देवि सर्वसौभाग्यदायिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे देवी, जिनके चरणों की पूजा की जाती है, जो सभी प्रकार के सौभाग्य प्रदान करती हैं, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Goddess, whose feet are worshipped and who bestows all auspiciousness, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse praises the Goddess's benevolence and the blessings received by those who revere her."
+      sanskrit: "शुम्भस्यैव निशुम्भस्य धूम्राक्षस्य च मर्दिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "शुम्भ, निशुम्भ और धूम्राक्ष का मर्दन करने वाली हे देवी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O slayer of Shumbha, Nishumbha, and Dhumraksha! Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "The devotee invokes her power shown in defeating the demon brothers Shumbha and Nishumbha, who represent ego and attachment, the root causes of suffering."
     },
     {
       verse_number: 8,
-      sanskrit: "अचिन्त्यरूपचरिते सर्वशत्रुविनाशिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे देवी, जिनका रूप और चरित्र अचिन्त्य है, जो सभी शत्रुओं का नाश करती हैं, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Goddess of incomprehensible form and deeds, destroyer of all enemies, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse acknowledges the transcendental nature of the Goddess and her power to eliminate all adversities."
+      sanskrit: "वन्दिताङ्घ्रियुगे देवि सर्वसौभाग्यदायिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे देवी! सभी सौभाग्य प्रदान करने वाली, आपके चरणयुगल सभी के द्वारा वन्दित हैं। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Devi, whose pair of feet are worshipped by all and who grants all good fortunes. Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "The focus shifts from her warrior aspect to her benevolent, boon-bestowing nature. She is the source of all 'saubhagya' (auspiciousness, prosperity, and well-being)."
     },
     {
       verse_number: 9,
-      sanskrit: "नतेभ्यः सर्वदा भक्त्या चण्डिके दुरितापहे ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे चण्डिके, जो सदा भक्ति से नतमस्तक भक्तों की पीड़ा हरती हैं, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Chandika, who always removes the sufferings of those who bow to you with devotion, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse emphasizes the Goddess's compassion towards her devoted followers, alleviating their sufferings."
+      sanskrit: "अचिन्त्यरूपचरिते सर्वशत्रुविनाशिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे अचिन्त्य रूप और चरित्र वाली तथा सभी शत्रुओं का नाश करने वाली देवी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Goddess of incomprehensible form and deeds, the destroyer of all enemies! Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "This verse acknowledges that the Goddess's true nature is beyond human comprehension ('achintya'). Her actions and forms are divine and cannot be limited by mortal understanding."
     },
     {
       verse_number: 10,
-      sanskrit: "स्तुवद्भ्यो भक्तिपूर्वं त्वां चण्डिके व्याधिनाशिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे चण्डिके, जो भक्ति से स्तुति करने वालों की बीमारियाँ नष्ट करती हैं, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Chandika, destroyer of diseases for those who praise you with devotion, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse highlights the healing aspect of the Goddess for her devotees."
+      sanskrit: "नतेभ्यः सर्वदा भक्त्या चण्डिके दुरितापहे।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे चण्डिके! जो लोग भक्तिपूर्वक आपके चरणों में सदा प्रणाम करते हैं, उनके पापों और कष्टों को हरने वाली! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Chandika, who always removes the sins and sufferings of those who bow to you with devotion. Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "This verse emphasizes the power of 'bhakti' (devotion) and surrender. For those who bow to her, she removes 'durita' (sins, calamities, sufferings)."
     },
     {
       verse_number: 11,
-      sanskrit: "चण्डिके सततं ये त्वामर्चयन्तीह भक्तितः ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे चण्डिके, जो सदा भक्ति से आपकी पूजा करते हैं, उन्हें सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Chandika, to those who constantly worship you with devotion, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse assures continuous blessings to those who consistently worship the Goddess."
+      sanskrit: "स्तुवद्भ्यो भक्तिपूर्वं त्वां चण्डिके व्याधिनाशिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे चण्डिके! जो भक्तिपूर्वक आपकी स्तुति करते हैं, उनकी व्याधियों का नाश करने वाली! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Chandika, destroyer of diseases for those who praise you with devotion. Grant me form, grant me victory, grant me fame, and destroy my enemies.",
+      explanation: "The Goddess is praised as 'Vyadhi-nashini,' the destroyer of diseases. This extends her protective grace to physical health and well-being, healing the ailments of her devotees."
     },
     {
       verse_number: 12,
-      sanskrit: "देहि सौभाग्यमारोग्यं देहि मे परमं सुखम् ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "मुझे सौभाग्य, आरोग्य और परम सुख प्रदान करें; मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "Grant me good fortune, health, and supreme happiness; grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "This verse is a comprehensive plea for overall well-being and success."
+      sanskrit: "चण्डिके सततं ये त्वामर्चयन्तीह भक्तितः।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे चण्डिके! जो लोग इस संसार में भक्तिपूर्वक आपकी सदा पूजा करते हैं, (उन्हें) आप रूप, जय, यश दें और उनके शत्रुओं का नाश करें।",
+      english: "O Chandika, for those who constantly worship you with devotion here in this world, grant form, victory, fame, and destroy their enemies.",
+      explanation: "This verse highlights the rewards of consistent and devoted worship ('archana') of the Goddess in daily life."
     },
     {
       verse_number: 13,
-      sanskrit: "विधेहि द्विषतां नाशं विधेहि बलमुच्चकैः ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "शत्रुओं का नाश करें, मुझे अत्यधिक बल प्रदान करें; मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "Destroy my enemies, grant me immense strength; grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "A prayer for strength to overcome adversaries and achieve all-round success."
+      sanskrit: "देहि सौभाग्यमारोग्यं देहि मे परमं सुखम्।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "मुझे सौभाग्य और आरोग्य दें तथा परम सुख प्रदान करें। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "Grant me good fortune (saubhagya) and freedom from disease (arogyam); grant me the supreme happiness. Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "The devotee now explicitly asks for worldly and spiritual blessings: good fortune, health, and the ultimate happiness or bliss (paramam sukham)."
     },
     {
       verse_number: 14,
-      sanskrit: "विधेहि देवि कल्याणं विधेहि परमां श्रियम् ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे देवी, कल्याण करें, मुझे परम सम्पत्ति प्रदान करें; मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Goddess, bestow welfare, grant me supreme prosperity; grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Seeking blessings for overall welfare and supreme prosperity."
+      sanskrit: "विधेहि द्विषतां नाशं विधेहि बलमुच्चकैः।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "मेरे शत्रुओं का नाश करें और मुझे महान बल प्रदान करें। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "Cause the destruction of my enemies and grant me immense strength. Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "This is a direct plea for empowerment ('balam uchhakaih' - high strength) to overcome adversities and for the removal of hostile forces."
     },
     {
       verse_number: 15,
-      sanskrit: "सुरासुरशिरोरत्ननिघृष्टचरणेऽम्बिके ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे अम्बिके, जिनके चरण देवों और असुरों के सिरों के रत्नों से घिसते हैं, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Ambika (Mother), whose feet are rubbed by the jeweled crowns of gods and demons, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Acknowledging the supreme position of the Goddess, revered by all."
+      sanskrit: "विधेहि देवि कल्याणं विधेहि परमां श्रियम्।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे देवी! मेरा कल्याण करें और मुझे परम श्री (धन, संपदा, शोभा) प्रदान करें। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Devi, bestow welfare (kalyanam) upon me and grant me supreme prosperity/glory (paramam shriyam). Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "The prayer expands to include 'kalyanam' (overall well-being) and 'paramam shriyam' (supreme wealth, both material and spiritual), covering all aspects of a fulfilled life."
     },
     {
       verse_number: 16,
-      sanskrit: "विद्यावन्तं यशस्वन्तं लक्ष्मीवन्तं जनं कुरु ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "लोगों को विद्वान, यशस्वी और लक्ष्मीवान बनाएं; मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "Make people learned, famous, and prosperous; grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "A prayer for the upliftment and prosperity of all people."
+      sanskrit: "सुरासुरशिरोरत्ननिघृष्टचरणेऽम्बिके।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे अम्बिके! आपके चरण देवों और असुरों के मुकुटों में लगे रत्नों से घर्षित होते हैं। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Ambika (Mother), whose feet are rubbed by the gems on the crowns of both Suras (gods) and Asuras (demons)! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "This powerful metaphor illustrates the Goddess's supreme sovereignty. Both divine and demonic beings bow at her feet, acknowledging her as the ultimate power beyond their duality."
     },
     {
       verse_number: 17,
-      sanskrit: "प्रचण्डदैत्यदर्पघ्ने चण्डिके प्रणताय मे ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे प्रचण्ड दैत्यों के अहंकार को नष्ट करने वाली चण्डिके, मुझ प्रणत को सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Chandika, destroyer of the pride of formidable demons, to me who bows to You, grant beauty, victory, fame, and destroy my enemies.",
-      explanation: "Seeking blessings from the fierce form of the Goddess who crushes arrogance."
+      sanskrit: "विद्यावन्तं यशस्वन्तं लक्ष्मीवन्तं जनं कुरु।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "आप (अपने भक्तों को) विद्यावान, यशस्वी और लक्ष्मीवान बनाएं। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "Make your devotee learned (vidyavantam), famous (yashasvantam), and prosperous (lakshmivantam). Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "The prayer now becomes altruistic, asking the Goddess to bestow knowledge, fame, and wealth not just upon the chanter, but upon all 'janam' (people/devotees)."
     },
     {
       verse_number: 18,
-      sanskrit: "चतुर्भुजे चतुर्वक्त्रसंस्तुते परमेश्वरि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे चार भुजाओं वाली, चार मुखों वाले ब्रह्मा द्वारा स्तुति की जाने वाली परमेश्वरि, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O four-armed Parameshwari (Supreme Goddess), praised by the four-faced Brahma, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Acknowledging her supreme form and her praise by the creator God Brahma."
+      sanskrit: "प्रचण्डदैत्यदर्पघ्ने चण्डिके प्रणताय मे।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे प्रचण्ड दैत्यों के घमण्ड को चूर करने वाली चण्डिके! मुझ शरणागत को रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Chandika, destroyer of the pride of ferocious demons, to me who is surrendered to you, grant form, victory, fame, and destroy my enemies.",
+      explanation: "This verse reiterates her power to crush the 'darpa' (arrogance) of the most powerful demons, highlighting the importance of humility in devotion."
     },
     {
       verse_number: 19,
-      sanskrit: "कृष्णेन संस्तुते देवि शश्वद्भक्त्या सदाम्बिके ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे अम्बिके, कृष्ण द्वारा सदा भक्तिपूर्वक स्तुति की जाने वाली देवी, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Ambika, Goddess ever praised with devotion by Krishna, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Highlighting the Goddess's reverence by Lord Krishna."
+      sanskrit: "चतुर्भुजे चतुर्वक्त्रसंस्तुते परमेश्वरि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे चार भुजाओं वाली, चार मुखों वाले ब्रह्माजी द्वारा प्रशंसित परमेश्वरी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O four-armed Supreme Goddess, who is praised by the four-faced Brahma! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "Her supreme status is confirmed by mentioning that even the Creator, Lord Brahma, praises her. Her four arms symbolize her dominion over the four directions."
     },
     {
       verse_number: 20,
-      sanskrit: "हिमाचलसुतानाथसंस्तुते परमेश्वरि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे हिमाचल की पुत्री के पति (शिव) द्वारा स्तुति की जाने वाली परमेश्वरि, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Parameshwari, praised by the Lord of Himalaya's daughter (Shiva), grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Acknowledging her praise by Lord Shiva, her consort."
+      sanskrit: "कृष्णेन संस्तुते देवि शश्वद्भक्त्या सदाम्बिके।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे अम्बिके! भगवान कृष्ण द्वारा सदा भक्तिपूर्वक आपकी स्तुति की जाती है। आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Ambika, who is always praised with devotion by Krishna! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "This verse elevates her status further by stating that even Lord Krishna, an incarnation of Vishnu, is her eternal devotee."
     },
     {
       verse_number: 21,
-      sanskrit: "इन्द्राणीपतिसद्भावपूजिते परमेश्वरि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे इन्द्राणी के पति (इंद्र) द्वारा सद्भाव से पूजित परमेश्वरि, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Parameshwari, worshipped with true devotion by the husband of Indrani (Indra), grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Highlighting her worship by Indra, the king of gods."
+      sanskrit: "हिमाचलसुतानाथसंस्तुते परमेश्वरि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे हिमाचल की पुत्री (पार्वती) के पति (शिव) द्वारा प्रशंसित परमेश्वरी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Supreme Goddess, who is praised by the lord of Himalaya's daughter (Lord Shiva)! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "This highlights her praise by her own consort, Lord Shiva, showing the mutual reverence in the divine partnership of Shiva and Shakti."
     },
     {
       verse_number: 22,
-      sanskrit: "देवि प्रचण्डदोर्दण्डदैत्यदर्पविनाशिनि ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे देवी, प्रचण्ड भुजाओं वाले दैत्यों के अहंकार का नाश करने वाली, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Goddess, destroyer of the pride of demons with mighty arms, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Reiterating her power to crush the ego of powerful demons."
+      sanskrit: "इन्द्राणीपतिसद्भावपूजिते परमेश्वरि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे इन्द्राणी के पति (इंद्र) द्वारा सद्भाव से पूजित परमेश्वरी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Supreme Goddess, worshipped with sincere devotion by the husband of Indrani (Lord Indra)! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "Even the king of the gods, Indra, worships her, reinforcing her supreme authority over all divine beings."
     },
     {
       verse_number: 23,
-      sanskrit: "देवि भक्तजनोद्दामदत्तानन्दोदयेऽम्बिके ।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि ॥",
-      hindi: "हे अम्बिके, भक्तजनों को अपार आनंद प्रदान करने वाली देवी, मुझे सुंदरता, विजय, यश प्रदान करें और शत्रुओं का नाश करें।",
-      english: "O Ambika, Goddess who bestows immense joy upon your devotees, grant me beauty, victory, fame, and destroy my enemies.",
-      explanation: "Praising her as the source of boundless joy for her followers."
+      sanskrit: "देवि प्रचण्डदोर्दण्डदैत्यदर्पविनाशिनि।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे देवी! प्रचण्ड भुजाओं वाले दैत्यों के अहंकार का नाश करने वाली! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Devi, destroyer of the pride of demons with mighty arms! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "A powerful reiteration of her ability to humble even the most physically powerful and arrogant beings."
     },
     {
       verse_number: 24,
-      sanskrit: "भार्यां मनोरमां देहि मनोवृत्तानुसारिणीम् ।\nतारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम् ॥",
-      hindi: "मन के अनुसार चलने वाली, कुलीन, और इस कठिन संसार सागर से तारने वाली मनोरम पत्नी प्रदान करें।",
-      english: "Grant me a beautiful wife who is in harmony with my thoughts, born of a noble family, and who can help cross the difficult ocean of worldly existence.",
-      explanation: "A prayer for a virtuous and compatible spouse."
+      sanskrit: "देवि भक्तजनोद्दामदत्तानन्दोदयेऽम्बिके।\nरूपं देहि जयं देहि यशो देहि द्विषो जहि॥",
+      hindi: "हे अम्बिके! भक्तजनों को अपार आनंद प्रदान करने वाली देवी! आप मुझे रूप, जय, यश दें और मेरे शत्रुओं का नाश करें।",
+      english: "O Ambika, who brings forth an abundance of joy for your devotees! Grant me form, victory, fame, and destroy my enemies.",
+      explanation: "This verse focuses on her benevolent nature, as the source of unbound joy ('ananda') for those who are devoted to her."
     },
     {
       verse_number: 25,
-      sanskrit: "इदं स्तोत्रं पठित्वा तु महास्तोत्रं पठेन्नरः ।\nस तु सप्तशतीसंख्यावरमाप्नोति सम्पदाम् ॥",
-      hindi: "इस स्तोत्र को पढ़कर जो मनुष्य महास्तोत्र (देवी माहात्म्य) का पाठ करता है, वह सप्तशती पाठ के समान फल और सम्पदा प्राप्त करता है।",
-      english: "Having recited this stotram, the person who then reads the Mahastotram (Devi Mahatmyam) obtains the merit equivalent to reciting the Saptashati and attains prosperity.",
-      explanation: "This concluding verse states the phala shruti (benefits of recitation), emphasizing that reciting Argala Stotram before the main Devi Mahatmyam enhances the rewards."
+      sanskrit: "भार्यां मनोरमां देहि मनोवृत्तानुसारिणीम्।\nतारिणीं दुर्गसंसारसागरस्य कुलोद्भवाम्॥",
+      hindi: "मुझे मन के अनुसार चलने वाली, कुलीन, और इस कठिन संसार सागर से तारने वाली मनोरम पत्नी प्रदान करें।",
+      english: "Grant me a beautiful wife who is in harmony with my thoughts (manovrittanusarinim), born of a good family, and who can help me cross the difficult ocean of worldly existence (samsara).",
+      explanation: "This is a unique verse in the stotram, a specific prayer for a virtuous and spiritually compatible spouse who can be a partner in navigating the challenges of life."
+    },
+    {
+      verse_number: 26,
+      sanskrit: "इदं स्तोत्रं पठित्वा तु महास्तोत्रं पठेन्नरः।\nस तु सप्तशतीसंख्यावरमाप्नोति सम्पदाम्॥ॐ॥",
+      hindi: "इस स्तोत्र को पढ़कर जो मनुष्य महास्तोत्र (देवी माहात्म्य) का पाठ करता है, वह सप्तशती पाठ के सम्पूर्ण फल और सम्पदा को प्राप्त करता है।",
+      english: "The person who reads this stotram and then recites the great stotram (Devi Mahatmyam), attains the highest fruit equivalent to the recitation of the Saptashati and gains all forms of wealth. Om.",
+      explanation: "This is the 'Phala Shruti' or the verse detailing the benefits. It promises that reciting the Argala before the main Chandi Path ensures the devotee receives the complete spiritual rewards and blessings of the entire scripture."
     }
 ];
 
@@ -237,8 +244,8 @@ const argalaStotramVerses: VerseDetail[] = [
 const keelakamStotramVersesData: VerseDetail[] = [
   {
     verse_number: 1,
-    sanskrit: "ॐ अस्य श्रीदुर्गा सप्तशती कीलक स्तोत्र मंत्रस्य शिव ऋषिः, अनुष्टुप छन्दः, श्री महाकाली देवता, श्रीदुर्गाप्रीत्यर्थे सप्तशती पाठाङ्गत्वेन जपे विनियोगः॥",
-    hindi: "ॐ इस दुर्गा सप्तशती कीलक स्तोत्र के ऋषि शिव हैं, छन्द अनुष्टुप है, देवता श्री महाकाली हैं। इसका जप श्री दुर्गा की प्रसन्नता हेतु सप्तशती पाठ के अंग के रूप में किया जाता है।",
+    sanskrit: "ॐ अस्य श्रीदुर्गा सप्तशती कीलक स्तोत्र मंत्रस्य शिव ऋषिः, अनुष्टुप् छन्दः, श्री महाकाली देवता, श्रीदुर्गाप्रीत्यर्थे सप्तशती पाठाङ्गत्वेन जपे विनियोगः॥",
+    hindi: "ॐ इस दुर्गा सप्तशती कीलक स्तोत्र के ऋषि शिव हैं, छन्द अनुष्टुप् है, देवता श्री महाकाली हैं। इसका जप श्री दुर्गा की प्रसन्नता हेतु सप्तशती पाठ के अंग के रूप में किया जाता है।",
     english: "Om. The seer of this Keelaka Stotram of the Durga Saptashati is Shiva; the meter is Anushtubh; the deity is Mahakali. This is chanted as a limb of the Saptashati recitation for the pleasure of Devi Durga.",
     explanation: "The introductory verse gives the traditional invocation format, stating the rishi (sage), meter, deity, and purpose (vinyoga) of this stotra."
   },
@@ -1612,4 +1619,3 @@ export const sacredChantsData: SacredChant[] = [
     videoUrl: "https://www.youtube.com/results?search_query=Kamala+Stotram+with+lyrics"
   }
 ];
-

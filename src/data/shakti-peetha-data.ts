@@ -1,7 +1,54 @@
-
 import type { ShaktiPeetha, ShaktiPeethaFestival, DeityDetail, PeethaResources, ResourceLink, AccessibilityInfo, ShaktiPeethaLocation } from '@/types';
 
 // --- RAW DATA DEFINITIONS ---
+
+const kamakhyaRawData = {
+  idString: "kamakhya-guwahati",
+  name: "Kamakhya Shakti Peetha",
+  alternateNames: ["Kamarupa-Kamakhya", "Kamakhya Temple"],
+  location: {
+    city: "Guwahati",
+    district: "Kamrup",
+    state: "Assam",
+    country: "India",
+    coordinates: { latitude: 26.1664, longitude: 91.7055 }
+  },
+  goddess: {
+    name: "Kamakhya",
+    description: "The presiding deity is Kamakhya Devi, worshipped not as an idol but as a yoni-shaped stone with a natural spring, symbolizing creation, fertility, and the raw power of Shakti."
+  },
+  bhairava: {
+    name: "Umananda",
+    description: "Umananda Bhairava, whose temple is located on an island in the Brahmaputra river, is the guardian of this powerful Peetha."
+  },
+  bodyPart: "Yoni (Womb/Genitals)",
+  templeSignificance: "Kamakhya is one of the oldest and most powerful Shakti Peethas, revered as a major center for Tantrism. It celebrates the procreative and nurturing power of the Goddess and is a symbol of feminine strength and fertility.",
+  mainAttractions: [
+    "The Garbhagriha (sanctum) housing the sacred Yoni stone with a natural spring",
+    "Ambubachi Mela, a major annual Tantric fertility festival",
+    "The Umananda Temple on Peacock Island in the Brahmaputra",
+    "Complex of temples dedicated to the Dasa Mahavidyas"
+  ],
+  festivalsCelebrated: ["Ambubachi Mela (June)", "Navaratri", "Durga Puja", "Manasha Puja"],
+  architecture: "The temple features a unique hybrid style, with a Nilachal type of architecture characterized by a hemispherical dome and a beehive-like shikhara (spire).",
+  spiritualImportance: "As the site where the yoni fell, Kamakhya is considered the 'womb' of creation and the epicenter of Shakti worship. It is a vital pilgrimage for Tantra practitioners and devotees seeking blessings for fertility, protection, and liberation.",
+  accessibility: {
+    nearestRailwayStation: "Guwahati Railway Station",
+    nearestAirport: "Lokpriya Gopinath Bordoloi International Airport, Guwahati",
+    localTransport: "Easily accessible by taxis, auto-rickshaws, and city buses from anywhere in Guwahati."
+  },
+  resources: {
+    officialWebsite: "https://www.maakamakhya.org/",
+    wikipedia: "https://en.wikipedia.org/wiki/Kamakhya_Temple",
+    additionalLinks: [
+      { title: "Assam Tourism - Kamakhya", url: "https://assamtourism.gov.in/destinations/details/kamakhya-temple" },
+      { title: "Temple Purohit - Kamakhya Temple", url: "https://www.templepurohit.com/hindu-temple/kamakhya-temple-guwahati-assam/" }
+    ],
+    googleMaps: "https://www.google.com/maps/place/Kamakhya+Temple"
+  },
+  keywords: ["Kamakhya Shakti Peetha", "Kamarupa Temple", "Yoni Peeth", "Assam Shakti Peetha", "Umananda Bhairava", "Ambubachi Mela", "Tantric Temple"]
+};
+
 
 const kalighatRawData = {
   idString: "kalighat",
@@ -338,7 +385,7 @@ const kireetRawData = {
   mainAttractions: [
     "Main shrine of Goddess Kiriteswari",
     "Peaceful rural ambiance near Bhagirathi river",
-    "Annual Kiriteshwari Mela"
+    "Annual Kiriteswari Mela"
   ],
   festivalsCelebrated: [
     "Durga Puja",
@@ -862,9 +909,9 @@ const srisailamRawData = {
   architecture: "The temple complex is a blend of Vijayanagara and Dravidian styles with intricately carved gopurams, massive walls, and beautifully adorned sanctums. The Bhramaramba shrine is located adjacent to the Mallikarjuna Jyotirlinga.",
   spiritualImportance: "Being both a Shakti Peetha and Jyotirlinga, Srisailam is considered one of the most powerful pilgrimage centers. The temple is also known for its role in Shakta, Shaiva, and Tantric traditions. Pilgrims believe that visiting the shrine grants liberation and protection from evil.",
   accessibility: {
-    currentStatus: "Well-developed pilgrimage site with facilities",
+    currentStatus: "Major pilgrimage site with high annual footfall",
     nearestTown: "Srisailam",
-    localTransport: "Well connected by road from Hyderabad and Kurnool; nearest railway station is Markapur Road; frequent buses available",
+    localTransport: "Well-connected by road from Hyderabad and Kurnool. Nearest railway station is Markapur Road; frequent buses available",
     nearestRailwayStation: "Markapur Road",
     nearestAirport: "Rajiv Gandhi International Airport, Hyderabad"
   },
@@ -874,7 +921,7 @@ const srisailamRawData = {
     additionalLinks: [
       { title: "Hindu Pedia - Shriparvata Shakti Peetha", url: "https://www.hindupedia.com/en/Shriparvata_Shakti_Peetha"},
       { title: "Rgyan - Srisailam Shakti Peeth", url: "https://rgyan.com/en/shakti-peeths/srisailam-shakti-peeth"},
-      { title: "Temple Purohit - Srisailam", url: "https://templepurohit.com/hindu-temple/srisailam-mallikarjuna-jyotirlinga/"}
+      { title: "Temple Purohit - Srisailam", url: "https://templepurohit.com/hindu-temple/sri-bramaramba-mallikarjuna-swamy-temple-srisailam/"}
     ],
     googleMaps: "https://www.google.com/maps/place/16.0728,78.8686"
   },
@@ -1200,7 +1247,7 @@ const ramgiriRawData = {
     wikipedia: "https://en.wikipedia.org/wiki/Jogulamba_temple",
     officialWebsite: "https://www.asitelangana.in/alampur-jogulamba-temple",
     additionalLinks: [
-      { title: "Temple Purohit - Jogulamba Temple", url: "https://templepurohit.com/hindu-temple/jogulamba-temple-alampur/"},
+      { title: "Temple Purohit - Jogulamba Temple", url: "https://www.templepurohit.com/hindu-temple/jogulamba-temple-alampur/"},
       { title: "Rgyan - Ramgiri Shakti Peeth", url: "https://rgyan.com/en/shakti-peeths/ramgiri-shakti-peeth-jogulamba-temple"},
       { title: "Hindupedia - Ramgiri Shakti Peetha", url: "https://www.hindupedia.com/en/Ramgiri_Shakti_Peetha"}
     ],
@@ -1268,8 +1315,8 @@ const shriparvataRawData = {
     officialWebsite: "https://www.srisailamonline.com/",
     additionalLinks: [
       { title: "Hindupedia - Shriparvata Shakti Peetha", url: "https://www.hindupedia.com/en/Shriparvata_Shakti_Peetha"},
-      { title: "Temple Purohit - Sri Bramaramba", url: "https://templepurohit.com/hindu-temple/sri-bramaramba-mallikarjuna-swamy-temple-srisailam/"},
-      { title: "Rgyan - Shriparvata Shakti Peeth", url: "https://rgyan.com/en/shakti-peeths/shriparvata-shakti-peeth"}
+      { title: "Rgyan - Shriparvata Shakti Peeth", url: "https://rgyan.com/en/shakti-peeths/shriparvata-shakti-peeth"},
+      { title: "Temple Purohit - Sri Bramaramba", url: "https://templepurohit.com/hindu-temple/sri-bramaramba-mallikarjuna-swamy-temple-srisailam/"}
     ],
     googleMaps: "https://www.google.com/maps/place/16.0728,78.8694"
   },
@@ -1537,7 +1584,7 @@ const phullaraAttahasRawData = {
     wikipedia: "https://en.wikipedia.org/wiki/Phullara_Shakti_Peeth",
     additionalLinks: [
       { title: "Rgyan - Phullara Shakti Peeth", url: "https://rgyan.com/en/shakti-peeths/phullara-shakti-peeth" },
-      { title: "Temple Purohit - Phullara Shakti Peetha", url: "https://www.templepurohit.com/hindu-temple/phullara-shakti-peetha-attahas-west-bengal/" },
+      { title: "Temple Purohit - Phullara Shakti Peeth", url: "https://www.templepurohit.com/hindu-temple/phullara-shakti-peeth-attahas-west-bengal/" },
       { title: "Drikpanchang - Shakti Peetha", url: "https://www.drikpanchang.com/spiritual-articles/shakti-peetha.html" }
     ],
     googleMaps: "https://www.google.com/maps/place/Attahas+Temple,+Labhpur"
@@ -1589,7 +1636,7 @@ const mahishamardiniJaynagarRawData = {
     ],
     googleMaps: "https://www.google.com/maps/place/Jaynagar+Shakti+Peeth"
   },
-  keywords: ["Mahishamardini Shakti Peetha", "Jaynagar Shakti Peeth", "Mahisha Mardini", "Durga temples West Bengal", "Right wrist of Sati", "Shakti temples in India"]
+  keywords: ["Mahishamardini Shakti Peetha", "Jaynagar Shakti Peetha", "Mahisha Mardini", "Durga temples West Bengal", "Right wrist of Sati", "Shakti temples in India"]
 };
 
 const avantiUjjainRawData = {
@@ -1872,10 +1919,233 @@ const manibandhPushkarRawData = {
   keywords: ["Manibandh Shakti Peetha", "Manivedika Devi Temple", "Sati's Wrists Temple", "Pushkar Shakti Peeth", "Gayatri Devi Shakti Temple", "Rajasthan Shakti Peeth"]
 };
 
+// New Raw Data Entries to be added
+const tripuraSundariUdaipurRawData = {
+  idString: "tripura-sundari-udaipur",
+  name: "Tripura Sundari Shakti Peetha (Udaipur)",
+  alternateNames: ["Tripureshwari Temple", "Matabari"],
+  location: { city: "Udaipur", state: "Tripura", country: "India", coordinates: { latitude: 23.5412, longitude: 91.4939 } },
+  goddess: { name: "Tripura Sundari", description: "The beautiful goddess of the three worlds." },
+  bhairava: { name: "Tripuresh", description: "The lord of the three worlds." },
+  bodyPart: "Right Foot",
+  templeSignificance: "One of the holiest sites for Shaktism in the region, revered for its wish-fulfilling powers.",
+  mainAttractions: ["Kalyan Sagar lake behind the temple", "Tortoises in the lake", "Annual Diwali Mela"],
+  festivalsCelebrated: ["Diwali", "Navaratri"],
+  architecture: "Bengali 'Char-chala' style with a square sanctum and a conical dome.",
+  spiritualImportance: "Considered a Maha Peetha, it is a major pilgrimage destination in Northeast India.",
+  accessibility: { nearestRailwayStation: "Udaipur (Tripura) Railway Station", nearestAirport: "Agartala Airport" },
+  resources: { wikipedia: "https://en.wikipedia.org/wiki/Tripura_Sundari_Temple", officialWebsite: "https://tripuratourism.gov.in/matabari" },
+  keywords: ["Tripura Sundari", "Matabari", "Shakti Peeth Tripura", "Right foot of Sati"]
+};
+
+const vimalaTemplePuriRawData = {
+  idString: "vimala-temple-puri",
+  name: "Vimala Shakti Peetha (Puri)",
+  alternateNames: ["Vimala Temple", "Puri Shakti Peetha"],
+  location: { city: "Puri", state: "Odisha", country: "India", coordinates: { latitude: 19.8053, longitude: 85.8183 } },
+  goddess: { name: "Vimala", description: "The pure and benevolent one." },
+  bhairava: { name: "Jagannath", description: "The lord of the universe." },
+  bodyPart: "Navel (Nabhi)",
+  templeSignificance: "Located within the famous Jagannath Temple complex, it's considered a primary Shakti Peetha.",
+  mainAttractions: ["Part of the Jagannath Temple complex", "Sacred Rohini Kunda"],
+  festivalsCelebrated: ["Durga Puja (as Sharadiya Utsava)", "Navaratri"],
+  architecture: "Classic Kalinga style architecture, integral to the Jagannath temple layout.",
+  spiritualImportance: "Food offered to Lord Jagannath becomes Mahaprasad only after it is offered to Goddess Vimala.",
+  accessibility: { nearestRailwayStation: "Puri Railway Station", nearestAirport: "Bhubaneswar Airport" },
+  resources: { wikipedia: "https://en.wikipedia.org/wiki/Vimala_Temple" },
+  keywords: ["Vimala Temple", "Puri Shakti Peetha", "Navel of Sati", "Jagannath Temple"]
+};
+
+// ... (and so on for all the other new peethas)
+const allNewRawData = [
+    tripuraSundariUdaipurRawData,
+    vimalaTemplePuriRawData,
+    {
+      idString: "naina-devi-himachal",
+      name: "Naina Devi Shakti Peetha",
+      location: { city: "Bilaspur", state: "Himachal Pradesh", country: "India" },
+      goddess: { name: "Mahishamardini" },
+      bhairava: { name: "Krodhish" },
+      bodyPart: "Eyes",
+      keywords: ["Naina Devi", "Himachal Shakti Peeth", "Eyes of Sati"]
+    },
+    {
+      idString: "shail-shrine-sylhet",
+      name: "Shail Shakti Peetha",
+      location: { city: "Sylhet", country: "Bangladesh" },
+      goddess: { name: "Mahalakshmi" },
+      bhairava: { name: "Sambaranand" },
+      bodyPart: "Neck",
+      keywords: ["Shail Peeth", "Sylhet Shakti Peeth", "Neck of Sati"]
+    },
+    {
+      idString: "gandaki-chandi-nepal",
+      name: "Gandaki Chandi Shakti Peetha",
+      location: { city: "Pokhara", country: "Nepal" },
+      goddess: { name: "Gandaki Chandi" },
+      bhairava: { name: "Chakrapani" },
+      bodyPart: "Forehead",
+      keywords: ["Gandaki Peeth", "Nepal Shakti Peeth", "Forehead of Sati"]
+    },
+    {
+      idString: "bahula-bardhaman",
+      name: "Bahula Shakti Peetha",
+      location: { city: "Bardhaman", state: "West Bengal", country: "India" },
+      goddess: { name: "Bahula (Chandika)" },
+      bhairava: { name: "Bhiruk" },
+      bodyPart: "Left Arm",
+      keywords: ["Bahula Peeth", "Bardhaman Shakti Peeth", "Left Arm of Sati"]
+    },
+    {
+      idString: "ujjaini-harsiddhi-ujjain",
+      name: "Ujjaini Harsiddhi Shakti Peetha",
+      location: { city: "Ujjain", state: "Madhya Pradesh", country: "India" },
+      goddess: { name: "Harsiddhi Mata" },
+      bhairava: { name: "Mahakaleshwar" },
+      bodyPart: "Upper Lip",
+      keywords: ["Harsiddhi Temple", "Ujjain Shakti Peeth", "Upper Lip of Sati"]
+    },
+    {
+      idString: "manivedika-pushkar",
+      name: "Manivedika Shakti Peetha",
+      location: { city: "Pushkar", state: "Rajasthan", country: "India" },
+      goddess: { name: "Gayatri" },
+      bhairava: { name: "Sarvananda" },
+      bodyPart: "Wrists",
+      keywords: ["Manivedika Peeth", "Pushkar Shakti Peeth", "Wrists of Sati"]
+    },
+    {
+      idString: "viraja-jajpur",
+      name: "Viraja Shakti Peetha",
+      location: { city: "Jajpur", state: "Odisha", country: "India" },
+      goddess: { name: "Viraja" },
+      bhairava: { name: "Jagannath" },
+      bodyPart: "Navel",
+      keywords: ["Viraja Temple", "Jajpur Shakti Peeth", "Navel of Sati"]
+    },
+    {
+      idString: "kankalitala-birbhum",
+      name: "Kankalitala Shakti Peetha",
+      location: { city: "Birbhum", state: "West Bengal", country: "India" },
+      goddess: { name: "Devgarbha" },
+      bhairava: { name: "Ruru" },
+      bodyPart: "Bone",
+      keywords: ["Kankalitala", "Birbhum Shakti Peeth", "Bone of Sati"]
+    },
+    {
+      idString: "kalmadhav-amarkantak",
+      name: "Kalmadhav Shakti Peetha",
+      location: { city: "Amarkantak", state: "Madhya Pradesh", country: "India" },
+      goddess: { name: "Kali" },
+      bhairava: { name: "Asitanga" },
+      bodyPart: "Left Buttock",
+      keywords: ["Kalmadhav Peeth", "Amarkantak Shakti Peeth", "Left Buttock of Sati"]
+    },
+    {
+      idString: "shondesh-amarkantak",
+      name: "Shondesh Shakti Peetha",
+      location: { city: "Amarkantak", state: "Madhya Pradesh", country: "India" },
+      goddess: { name: "Narmada" },
+      bhairava: { name: "Bhadrasen" },
+      bodyPart: "Right Buttock",
+      keywords: ["Shondesh Peeth", "Narmada Udgam", "Right Buttock of Sati"]
+    },
+    {
+      idString: "ramgiri-chitrakoot-mp",
+      name: "Ramgiri Shakti Peetha",
+      location: { city: "Chitrakoot", state: "Madhya Pradesh", country: "India" },
+      goddess: { name: "Shivani" },
+      bhairava: { name: "Chanda" },
+      bodyPart: "Right Breast",
+      keywords: ["Ramgiri Chitrakoot", "Shivani Temple", "Right Breast of Sati"]
+    },
+    {
+      idString: "mithila-janakpur-nepal",
+      name: "Mithila Shakti Peetha",
+      location: { city: "Janakpur", country: "Nepal" },
+      goddess: { name: "Uma" },
+      bhairava: { name: "Mahodar" },
+      bodyPart: "Left Shoulder",
+      keywords: ["Mithila Peeth", "Janakpur Temple", "Left Shoulder of Sati"]
+    },
+    {
+      idString: "nalhati-birbhum",
+      name: "Nalhati Shakti Peetha",
+      location: { city: "Birbhum", state: "West Bengal", country: "India" },
+      goddess: { name: "Kalika" },
+      bhairava: { name: "Yogesh" },
+      bodyPart: "Vocal Pipe (Nala)",
+      keywords: ["Nalhati Temple", "Kalika Peeth", "Vocal Pipe of Sati"]
+    },
+    {
+      idString: "jayanti-meghalaya-new",
+      name: "Jayanti Shakti Peetha",
+      location: { city: "Jaintia Hills", state: "Meghalaya", country: "India" },
+      goddess: { name: "Jayanti" },
+      bhairava: { name: "Kramadishwar" },
+      bodyPart: "Left Thigh",
+      keywords: ["Jayanti Peeth", "Meghalaya Shakti Peeth", "Left Thigh of Sati"]
+    },
+    {
+      idString: "vimala-puri-odisha",
+      name: "Vimala Shakti Peetha",
+      location: { city: "Puri", state: "Odisha", country: "India" },
+      goddess: { name: "Vimala" },
+      bhairava: { name: "Jagannath" },
+      bodyPart: "Navel",
+      keywords: ["Vimala Temple Puri", "Puri Shakti Peeth", "Navel of Sati"]
+    },
+    {
+      idString: "chattal-chittagong",
+      name: "Chattal Shakti Peetha",
+      location: { city: "Chittagong", country: "Bangladesh" },
+      goddess: { name: "Bhawani" },
+      bhairava: { name: "Chandrashekhar" },
+      bodyPart: "Right Arm",
+      keywords: ["Chattal Peeth", "Chittagong Shakti Peeth", "Right Arm of Sati"]
+    },
+    {
+      idString: "tripura-udaipur-new",
+      name: "Tripura Shakti Peetha",
+      location: { city: "Udaipur", state: "Tripura", country: "India" },
+      goddess: { name: "Tripura Sundari" },
+      bhairava: { name: "Tripuresh" },
+      bodyPart: "Right Leg",
+      keywords: ["Tripura Sundari Temple", "Udaipur Tripura", "Right Leg of Sati"]
+    },
+    {
+      idString: "tristrota-jalpaiguri",
+      name: "Tristrota Shakti Peetha",
+      location: { city: "Jalpaiguri", state: "West Bengal", country: "India" },
+      goddess: { name: "Bhramari" },
+      bhairava: { name: "Ambar" },
+      bodyPart: "Left Leg",
+      keywords: ["Tristrota Peeth", "Jalpaiguri Shakti Peeth", "Left Leg of Sati"]
+    },
+    {
+      idString: "vashishtha-assam",
+      name: "Vashishtha Shakti Peetha",
+      location: { city: "Guwahati", state: "Assam", country: "India" },
+      goddess: { name: "Tara" },
+      bhairava: { name: "Vashishtha" },
+      bodyPart: "Mind",
+      keywords: ["Vashishtha Ashram", "Tara Temple Guwahati", "Mind of Sati"]
+    },
+    {
+      idString: "panchasagar-uttar-pradesh",
+      name: "Panchasagar Shakti Peetha",
+      location: { city: "Varanasi", state: "Uttar Pradesh", country: "India" },
+      goddess: { name: "Varahi" },
+      bhairava: { name: "Maharudra" },
+      bodyPart: "Lower Teeth",
+      keywords: ["Panchasagar Peeth", "Varanasi Shakti Peeth", "Lower Teeth of Sati"]
+    }
+];
 
 // Array of all raw data objects to be processed
 // This list now includes the definitions from the constants above
-const allRawDataFromUser = [
+const allRawData = [
+    kamakhyaRawData,
     kalighatRawData, prayagRawData, vishalakshiRawData, jwalajiRawData,
     kanyakumariRawData, taraTariniRawData, hinglajRawData, chamundaHPRawData,
     dakshineswarRawData, kireetRawData, bahulaRawData, utkalaRawData, ambajiRawData,
@@ -1884,7 +2154,8 @@ const allRawDataFromUser = [
     ramgiriRawData, shriparvataRawData,
     manasaMungerRawData, gayaPeethaRawData, kurukshetraPeethaRawData, varahiChaurasiRawData, mahamayiAmarnathRawData,
     phullaraAttahasRawData, mahishamardiniJaynagarRawData, avantiUjjainRawData, jeshoreshwariKhulnaRawData,
-    surkandaDeviUttarakhandRawData, mayaDeviHaridwarRawData, tukreswariAssamRawData, manibandhPushkarRawData
+    surkandaDeviUttarakhandRawData, mayaDeviHaridwarRawData, tukreswariAssamRawData, manibandhPushkarRawData,
+    ...allNewRawData
 ];
 
 
@@ -1957,31 +2228,33 @@ const transformResources = (originalResources: any): PeethaResources => {
 const processedPeethasMap = new Map<string, ShaktiPeetha>();
 
 // Process the detailed raw data first
-allRawDataFromUser.forEach(rawData => {
+allRawData.forEach(rawData => {
     const stringId = rawData.idString || createStringId(rawData.id, rawData.name);
+
+    const locationObject = rawData.location || {};
 
     const mappedPeetha: ShaktiPeetha = {
         id: stringId,
         name: rawData.name,
         alternateNames: rawData.alternateNames,
-        location: `${rawData.location.village || rawData.location.city || ''}${rawData.location.district ? ', ' + rawData.location.district : ''}, ${rawData.location.state || rawData.location.region || ''}, ${rawData.location.country}`,
+        location: `${locationObject.village || locationObject.city || ''}${locationObject.district ? ', ' + locationObject.district : ''}, ${locationObject.state || locationObject.region || ''}, ${locationObject.country}`,
         detailedLocation: {
-            place: rawData.location.village || rawData.location.city,
-            city: rawData.location.city || rawData.location.district,
-            district: rawData.location.district,
-            state: rawData.location.state || rawData.location.region,
-            country: rawData.location.country,
-            coordinates: rawData.location.coordinates,
+            place: locationObject.village || locationObject.city,
+            city: locationObject.city || locationObject.district,
+            district: locationObject.district,
+            state: locationObject.state || locationObject.region,
+            country: locationObject.country,
+            coordinates: locationObject.coordinates,
         },
         bodyPart: rawData.bodyPart,
         shakti: rawData.goddess.name,
         shaktiDetail: rawData.goddess,
         bhairava: rawData.bhairava.name,
         bhairavaDetail: rawData.bhairava,
-        significance: [rawData.templeSignificance],
+        significance: Array.isArray(rawData.templeSignificance) ? rawData.templeSignificance : [rawData.templeSignificance],
         templeType: "Ancient Shrine", // Default or infer
-        associatedFestival: rawData.festivalsCelebrated[0],
-        festivals: rawData.festivalsCelebrated.map((name: string) => ({
+        associatedFestival: Array.isArray(rawData.festivalsCelebrated) ? rawData.festivalsCelebrated[0] : rawData.festivalsCelebrated,
+        festivals: (rawData.festivalsCelebrated || []).map((name: string) => ({
             name,
             type: "Major Festival",
             significance: `Celebration of ${name}.`,

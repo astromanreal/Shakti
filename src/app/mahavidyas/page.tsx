@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
-    "Das Mahavidyas", "Ten Wisdom Goddesses", "Mahavidyas", "Kali", "Tara", "Tripura Sundari",
-    "Bhuvaneshwari", "Chinnamasta", "Bhairavi", "Dhumavati", "Bagalamukhi", "Matangi", "Kamala",
-    "Tantric Goddesses", "Shaktism", "Cosmic Truths", "Divine Feminine", "Maa Adi Shakti"
+    "Das Mahavidyas", "Ten Wisdom Goddesses", "Tantric Goddesses", "Kali", "Tara", "Tripura Sundari",
+    "Bhuvaneshwari", "Chhinnamasta", "Bhairavi", "Dhumavati", "Bagalamukhi", "Matangi", "Kamala",
+    "Shakti Worship", "Tantra", "Maa Adi Shakti"
   ],
   alternates: {
     canonical: '/mahavidyas',
@@ -29,15 +29,8 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: `${siteUrl}/mahavidyas`,
-    images: [
-      {
-        url: ogImageUrl,
-        width: 1200,
-        height: 630,
-        alt: 'The Das Mahavidyas - Ten Great Wisdom Goddesses of Tantra',
-      },
-    ],
-    type: 'website', 
+    images: [{ url: ogImageUrl, width: 1200, height: 630, alt: 'The Das Mahavidyas - Ten Great Wisdoms of Tantra' }],
+    type: 'website',
   },
   twitter: {
     card: 'summary_large_image',

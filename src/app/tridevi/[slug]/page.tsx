@@ -11,8 +11,8 @@ import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 import { 
     ScrollText, ShieldAlert, Gem, BookOpen, Heart, Users, Award, CalendarDays, Star, 
-    Info, Atom, Brain, Landmark, Waves, Palette, LinkIcon, Mountain, Group, Sparkles,
-    Briefcase, Anchor, BookCopy, ExternalLink, ShieldQuestion, Zap, Bot, SunMoon, Lightbulb, HandCoins, Scale, Edit3, HandHeart, FileText, ChevronRight, Sword
+    Info, Atom, Brain, Landmark, Waves, Palette, Link as LinkIcon, Mountain, Group, Sparkles,
+    Briefcase, Anchor, BookCopy, ExternalLink, ShieldQuestion, Zap, Bot, SunMoon, Lightbulb, HandCoins, Scale, Edit3, HandHeart, FileText, ChevronRight, Sword, ArrowLeftCircle
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
@@ -62,8 +62,6 @@ export async function generateMetadata({ params }: TrideviPageProps): Promise<Me
       ],
       type: 'article', 
       article: {
-        // publishedTime: "YYYY-MM-DDTHH:MM:SSZ", // Add if available
-        // modifiedTime: "YYYY-MM-DDTHH:MM:SSZ", // Add if available
         authors: [`${siteUrl}/about`],
         section: "Tridevi & Major Forms",
         tags: [goddess.name, goddess.aspect, 'Tridevi', 'Hindu Goddess'],
@@ -86,14 +84,14 @@ export async function generateStaticParams() {
 
 function SectionCard({ title, icon: Icon, children, cardClassName, titleClassName }: { title: string | React.ReactNode, icon?: React.ElementType, children: React.ReactNode, cardClassName?: string, titleClassName?: string }) {
   return (
-    <Card className={cn("shadow-xl rounded-xl border border-border/50 overflow-hidden", cardClassName)}>
+    <Card className={cn("shadow-lg rounded-xl border border-border/50 overflow-hidden", cardClassName)}>
       <CardHeader className="bg-muted/30">
         <CardTitle className={cn("text-2xl text-primary flex items-center gap-2", titleClassName)}>
           {Icon && <Icon className="w-7 h-7" />}
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent className="p-6">{children}</CardContent>
+      <CardContent className="p-6 space-y-4">{children}</CardContent>
     </Card>
   );
 }
@@ -102,7 +100,19 @@ export default function TrideviPage({ params }: TrideviPageProps) {
   const goddess = trideviData.find((g) => g.slug === params.slug);
 
   if (!goddess) {
-    return <div className="container mx-auto px-4 py-8 text-center">Goddess not found. Please check the URL or return to the overview.</div>;
+    return (
+        <div className="container mx-auto px-4 py-8 text-center">
+            <Card className="max-w-md mx-auto p-8 bg-destructive/10 border-destructive">
+                <CardTitle className="text-2xl text-destructive mb-4">Goddess Not Found</CardTitle>
+                <CardDescription>
+                    The Goddess you are looking for is not currently detailed or the path is incorrect.
+                </CardDescription>
+                 <Button asChild className="mt-6">
+                    <Link href="/tridevi">Back to Tridevi Overview</Link>
+                </Button>
+            </Card>
+      </div>
+    );
   }
 
   const getGoddessIcon = (slug: string) => {
@@ -150,6 +160,12 @@ export default function TrideviPage({ params }: TrideviPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <div className="container mx-auto px-4 py-10">
+        <Button asChild variant="outline" className="mb-8 group text-sm">
+          <Link href="/tridevi">
+            <ArrowLeftCircle className="w-4 h-4 mr-2 group-hover:text-accent transition-colors" />
+            Back to Major Forms
+          </Link>
+        </Button>
         <header className="mb-12 text-center" aria-labelledby={`goddess-title-${goddess.slug}`}>
           <div className="inline-flex items-center justify-center bg-primary/10 p-4 rounded-full mb-6 shadow-lg">
             {getGoddessIcon(goddess.slug)}
@@ -163,7 +179,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
 
         <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-1">
-            <Card className="sticky top-10 shadow-xl rounded-xl overflow-hidden border-2 border-primary/30 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+            <Card className="sticky top-20 shadow-xl rounded-xl overflow-hidden border-2 border-primary/30 transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
               <CardHeader className="p-0">
                 <Image
                   src={goddess.imageUrl || `https://placehold.co/600x700.png`}
@@ -175,7 +191,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
                   priority
                 />
               </CardHeader>
-              <CardContent className="p-6 bg-gradient-to-b from-card to-muted/20">
+              <CardContent className="p-6 bg-gradient-to-b from-card to-muted/30">
                 <h3 className="text-xl font-semibold mb-3 text-secondary flex items-center">
                   <Star className="w-6 h-6 mr-2"/> Core Attributes
                 </h3>
@@ -203,7 +219,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
                   <Badge 
                     key={index} 
                     variant="outline" 
-                    className="block w-full text-left text-sm p-3 my-2 font-mono shadow-sm break-words whitespace-normal hover:bg-accent/10"
+                    className="block w-full text-left text-sm p-3 my-2 font-mono shadow-sm break-words whitespace-normal hover:bg-accent/10 border-accent/30"
                   >
                     {typeof mantraItem === 'string' ? mantraItem : (mantraItem.sanskrit || mantraItem.name)}
                     {typeof mantraItem !== 'string' && mantraItem.sanskrit && mantraItem.name !== mantraItem.sanskrit && <span className="block text-xs opacity-80 mt-1">{mantraItem.name}</span>}
@@ -294,7 +310,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
                <SectionCard title="Major Festivals" icon={CalendarDays}>
                   <Accordion type="single" collapsible className="w-full mt-0">
                       {goddess.detailedFestivals.map(festival => (
-                          <AccordionItem value={festival.name} key={festival.name} className="border-b-0">
+                          <AccordionItem value={festival.name} key={festival.name} className="border-b last:border-b-0">
                               <AccordionTrigger className="text-lg hover:text-accent font-medium py-3">{festival.name}</AccordionTrigger>
                               <AccordionContent className="space-y-1 text-sm pb-3">
                                   {festival.type && <p><strong className="text-muted-foreground">Type:</strong> {festival.type}</p>}
@@ -466,7 +482,7 @@ export default function TrideviPage({ params }: TrideviPageProps) {
               {goddess.associatedAnimals && goddess.associatedAnimals.length > 0 && <p><strong className="text-secondary">Associated Animals:</strong> {goddess.associatedAnimals.join(', ')}.</p>}
           </SectionCard>
         )}
-
+        
         {goddess.modernRelevance && (
            <SectionCard title="Modern Relevance" icon={SunMoon} cardClassName="mb-12">
              <div className="space-y-2 text-md">
@@ -570,3 +586,4 @@ export default function TrideviPage({ params }: TrideviPageProps) {
   );
 }
 
+    

@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Badge } from '@/components/ui/badge';
@@ -141,7 +142,7 @@ export default function PhilosophyPage() {
           <Image 
               src="https://placehold.co/1200x400.png" 
               alt="Sri Chakra and Kundalini cosmic energy visualization" 
-              layout="fill" 
+              fill 
               objectFit="cover" 
               className="opacity-20 absolute inset-0 z-0"
               data-ai-hint="sri chakra kundalini cosmic energy flow"

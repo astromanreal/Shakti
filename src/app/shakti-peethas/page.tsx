@@ -1,97 +1,42 @@
 
 "use client";
 
-import { useState, useEffect } from 'react';
 import { shaktiPeethaData } from '@/data/shakti-peetha-data';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
 import { 
     MapPin, 
     Zap, 
     Heart, 
     Shield, 
     Landmark, 
-    Filter, 
     ChevronRight, 
     Type as TypeIcon, 
     CalendarDays,
-    Search,
     ListX 
 } from 'lucide-react';
 import type { ShaktiPeetha } from '@/types';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { useState, useMemo } from 'react';
+import { Input } from '@/components/ui/input';
 
 export default function ShaktiPeethasPage() {
-  const [filteredPeethas, setFilteredPeethas] = useState<ShaktiPeetha[]>([]);
-  const [availableLocations, setAvailableLocations] = useState<string[]>([]);
-  const [selectedLocation, setSelectedLocation] = useState<string>("All");
-  const [searchTerm, setSearchTerm] = useState<string>("");
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-    document.title = "Sacred Shakti Peethas - Pilgrimage Sites | Shakti Darshan";
-
-    const locationsSet = new Set<string>();
-    shaktiPeethaData.forEach(peetha => {
-      const country = peetha.detailedLocation?.country || peetha.location.split(',').pop()?.trim() || "Unknown";
-      const state = peetha.detailedLocation?.state;
-      if (country.toLowerCase() === "india" && state) {
-        locationsSet.add(state);
-      } else {
-        locationsSet.add(country);
-      }
-    });
-    setAvailableLocations(["All", ...Array.from(locationsSet).sort()]);
-    setFilteredPeethas(shaktiPeethaData); // Initialize with all peethas
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    let newFilteredPeethas = shaktiPeethaData;
-
-    // Filter by location
-    if (selectedLocation !== "All") {
-      newFilteredPeethas = newFilteredPeethas.filter(peetha => {
-        const country = peetha.detailedLocation?.country || peetha.location.split(',').pop()?.trim() || "Unknown";
-        const state = peetha.detailedLocation?.state;
-        if (country.toLowerCase() === "india" && state) {
-          return state === selectedLocation;
-        }
-        return country === selectedLocation;
-      });
-    }
-
-    // Filter by search term
-    if (searchTerm) {
-      const lowerSearchTerm = searchTerm.toLowerCase();
-      newFilteredPeethas = newFilteredPeethas.filter(peetha =>
-        peetha.name.toLowerCase().includes(lowerSearchTerm) ||
-        peetha.shakti.toLowerCase().includes(lowerSearchTerm) ||
-        peetha.bhairava.toLowerCase().includes(lowerSearchTerm) ||
-        peetha.bodyPart.toLowerCase().includes(lowerSearchTerm) ||
-        (peetha.detailedLocation?.place && peetha.detailedLocation.place.toLowerCase().includes(lowerSearchTerm)) ||
-        (peetha.detailedLocation?.city && peetha.detailedLocation.city.toLowerCase().includes(lowerSearchTerm)) ||
-        peetha.location.toLowerCase().includes(lowerSearchTerm) ||
-        (peetha.alternateNames && peetha.alternateNames.some(altName => altName.toLowerCase().includes(lowerSearchTerm)))
-      );
-    }
-
-    setFilteredPeethas(newFilteredPeethas);
-  }, [selectedLocation, searchTerm, isMounted]);
+  const [searchTerm, setSearchTerm] = useState('');
   
-  if (!isMounted) {
-    return (
-      <div className="container mx-auto px-4 py-8 flex justify-center items-center min-h-[calc(100vh-10rem)]">
-        <Landmark className="w-12 h-12 text-primary animate-pulse" />
-      </div>
+  const filteredPeethas = useMemo(() => {
+    if (!searchTerm) {
+      return shaktiPeethaData;
+    }
+    return shaktiPeethaData.filter(peetha => 
+      peetha.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      peetha.location.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      peetha.bodyPart.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      peetha.shakti.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      peetha.bhairava.toLowerCase().includes(searchTerm.toLowerCase())
     );
-  }
+  }, [searchTerm]);
 
   const formattedLocation = (peetha: ShaktiPeetha) => {
     if (peetha.detailedLocation) {
@@ -116,45 +61,21 @@ export default function ShaktiPeethasPage() {
           </p>
         </header>
 
-        {/* Filter Bar */}
-        <div className="mb-8 p-4 md:p-6 bg-muted/30 border border-border/20 rounded-xl flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6">
-          <div className="flex-grow w-full md:w-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Search Peethas by name, deity, location..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 text-base shadow-sm border-border focus:border-primary"
-              aria-label="Search Shakti Peethas"
+        <div className="mb-8 max-w-md mx-auto">
+            <Input 
+                type="text"
+                placeholder="Search by name, location, body part..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full"
             />
-          </div>
-          <div className="flex items-center gap-2 text-foreground/80 w-full md:w-auto">
-            <Filter className="w-5 h-5 text-primary flex-shrink-0" />
-            <label htmlFor="location-filter" className="text-sm font-medium whitespace-nowrap">Filter by Location:</label>
-            <Select value={selectedLocation} onValueChange={setSelectedLocation}>
-              <SelectTrigger id="location-filter" className="w-full md:w-[200px] lg:w-[250px] bg-background shadow-sm text-base border-border focus:border-primary h-11">
-                <SelectValue placeholder="Select Location" />
-              </SelectTrigger>
-              <SelectContent>
-                {availableLocations.map(loc => (
-                  <SelectItem key={loc} value={loc} className="text-base py-2">
-                    {loc}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
         </div>
 
-        {/* Count Display Section - Moved Here */}
-        {isMounted && shaktiPeethaData.length > 0 && (
-          <div className="mb-8 text-center text-muted-foreground">
-            <p>
-              Displaying {filteredPeethas.length} of {shaktiPeethaData.length} Sacred Shakti Peethas.
-            </p>
-          </div>
-        )}
+        <div className="mb-8 text-center text-muted-foreground">
+          <p>
+            Displaying {filteredPeethas.length} of {shaktiPeethaData.length} Sacred Shakti Peethas.
+          </p>
+        </div>
 
         {filteredPeethas.length > 0 ? (
           <section aria-label="List of Shakti Peethas" className="pt-4">
@@ -181,15 +102,15 @@ export default function ShaktiPeethasPage() {
                   </CardHeader>
                   <CardContent className="p-5 flex-grow space-y-2.5 text-sm text-foreground/90">
                       <div className="flex items-center gap-2">
-                        <Heart className="w-4 h-4 text-red-500 flex-shrink-0"/> 
+                        <Heart className="w-4 h-4 text-destructive flex-shrink-0"/> 
                         <div><strong className="font-medium text-secondary/90">Body Part:</strong> {peetha.bodyPart}</div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Zap className="w-4 h-4 text-yellow-500 flex-shrink-0"/> 
+                        <Zap className="w-4 h-4 text-secondary flex-shrink-0"/> 
                         <div><strong className="font-medium text-secondary/90">Shakti:</strong> {peetha.shakti}</div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Shield className="w-4 h-4 text-blue-500 flex-shrink-0"/> 
+                        <Shield className="w-4 h-4 text-accent flex-shrink-0"/> 
                         <div><strong className="font-medium text-secondary/90">Bhairava:</strong> {peetha.bhairava}</div>
                       </div>
                   </CardContent>
@@ -237,4 +158,3 @@ export default function ShaktiPeethasPage() {
     </>
   );
 }
-
