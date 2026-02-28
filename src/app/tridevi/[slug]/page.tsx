@@ -21,7 +21,7 @@ type TrideviPageProps = {
   params: { slug: TrideviDetails['slug'] };
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 
 export async function generateMetadata({ params }: TrideviPageProps): Promise<Metadata> {
   const goddess = trideviData.find((g) => g.slug === params.slug);

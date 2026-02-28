@@ -9,7 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Das Mahavidyas: Ten Great Wisdom Goddesses of Tantra & Shakti";
 const pageDescription = "Explore the Das Mahavidyas, ten powerful aspects of Adi Shakti. Discover the profound wisdom of Kali, Tara, Tripura Sundari, and other Tantric goddesses, each a unique path to liberation and divine understanding.";
 const ogImageUrl = `${siteUrl}/og-images/mahavidyas-overview.jpg`;

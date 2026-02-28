@@ -7,7 +7,7 @@ import { divineStoriesData } from '@/data/divine-stories-data'; // Updated impor
 import { allMajorFormsDetailedData } from '@/data/all-major-forms-detailed-data'; 
 import { shaktiPeethaData } from '@/data/shakti-peetha-data';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [

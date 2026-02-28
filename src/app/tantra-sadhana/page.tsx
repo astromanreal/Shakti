@@ -25,7 +25,7 @@ import type { Metadata } from 'next';
 import { tantraSadhanaContent } from '@/data/tantra-sadhana-content';
 import Image from 'next/image';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Tantra & Shakti Sadhana - Path of Divine Energy & Inner Power";
 const pageDescription = "Awaken the living power of Shakti within. Explore Tantra, the sacred spiritual science of Divine Energy, and the path of Shakti Sādhana for inner transformation, Kundalini awakening, and liberation.";
 const ogImageUrl = `${siteUrl}/og-images/tantra-shakti-sadhana.jpg`;

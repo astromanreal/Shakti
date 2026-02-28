@@ -11,7 +11,7 @@ import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Divine Stories of Maa Shakti - Puranic & Epic Tales";
 const pageDescription = "Explore captivating tales from Puranas, Itihasas, and folk traditions featuring Maa Adi Shakti and her diverse forms. Discover stories of Durga, Kali, Sati, and more, illuminating the power of the Divine Feminine.";
 const ogImageUrl = `${siteUrl}/og-images/divine-stories-shakti-darshan.jpg`;

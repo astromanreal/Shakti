@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Separator } from '@/components/ui/separator';
 import { BookHeart, Sparkles, Users, Target, Globe } from 'lucide-react';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "About Shakti Darshan - Our Mission & Vision";
 const pageDescription = "Learn about Shakti Darshan, a sacred digital space dedicated to exploring the profound wisdom, diverse forms, and timeless traditions of Maa Adi Shakti, the Divine Feminine.";
 const ogImageUrl = `${siteUrl}/og-images/about-shakti-darshan.jpg`;

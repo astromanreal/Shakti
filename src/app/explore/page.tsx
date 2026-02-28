@@ -21,7 +21,7 @@ import {
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Explore the Realm of Shakti - Divine Feminine Portals";
 const pageDescription = "Navigate through diverse aspects of Maa Adi Shakti. Discover Tridevi, Mahavidyas, Devi Mahatmyam forms, Shakti Peethas, sacred chants, philosophy, and more. Your journey into divine wisdom starts here.";
 const ogImageUrl = `${siteUrl}/og-images/explore-shakti-darshan.jpg`;

@@ -7,7 +7,7 @@ import { Library, ChevronRight, Mic2, TextQuote, BookOpenText, LanguagesIcon, Gl
 import { Button } from '@/components/ui/button';
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Sacred Chants Library - Stotras, Mantras & Shlokas for Shakti Worship";
 const pageDescription = "Immerse yourself in divine vibrations. Explore a library of Stotras, Shlokas, and Mantras dedicated to Maa Adi Shakti and her various forms. Find texts, translations, and meanings for your spiritual practice.";
 const ogImageUrl = `${siteUrl}/og-images/sacred-chants-library.jpg`;

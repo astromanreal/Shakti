@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 const siteName = 'Shakti Darshan';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const defaultDescription = 'A divine sanctuary dedicated to Maa Adi Shakti, exploring her infinite forms, timeless wisdom, and sacred traditions. Discover Tridevi, Mahavidyas, Shakti Peethas, mantras, and the philosophy of the Divine Feminine.';
 const defaultOgImage = `${siteUrl}/og-images/default-shakti-darshan.jpg`; // Generic default OG image
 

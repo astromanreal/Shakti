@@ -12,7 +12,7 @@ import type { Metadata } from 'next';
 import { Separator } from '@/components/ui/separator';
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Major Forms of Maa Adi Shakti: Tridevi, Kali, Parvati & More";
 const pageDescription = "Explore the diverse manifestations of the Divine Mother, including the Tridevi (Durga, Lakshmi, Saraswati), Parvati, Kali, and other prominent forms like Kamakshi, Meenakshi, and Lalita Tripurasundari. Discover their significance in Shakti worship.";
 const ogImageUrl = `${siteUrl}/og-images/major-shakti-forms.jpg`;

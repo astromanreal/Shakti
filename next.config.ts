@@ -31,16 +31,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'www.shaktidarshan.com', // Ensure this is present
+        hostname: 'adishakti.vercel.app',
         port: '',
         pathname: '/**',
       },
-      {
-        protocol: 'https',
-        hostname: 'shaktidarshan.com', // Added non-www version for robustness
-        port: '',
-        pathname: '/**',
-      }
     ],
   },
 };

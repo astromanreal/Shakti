@@ -18,7 +18,7 @@ type StoryPageProps = {
   params: { slug: string };
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 
 export async function generateMetadata({ params }: StoryPageProps): Promise<Metadata> {
   const story = divineStoriesData.find((s) => s.slug === params.slug);

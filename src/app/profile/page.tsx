@@ -30,7 +30,7 @@ import {
 } from "lucide-react";
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "My Spiritual Dashboard - Shakti Darshan Profile";
 const pageDescription = "Track your sādhanā, curate sacred content, and personalize your spiritual journey on Shakti Darshan. Your personal space for devotion and growth with Divine Feminine wisdom.";
 const ogImageUrl = `${siteUrl}/og-images/profile-dashboard-shakti-darshan.jpg`;

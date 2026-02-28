@@ -11,7 +11,7 @@ import { deviMahatmyamFormsData } from '@/data/devi-mahatmyam-forms-data';
 import type { DeviForm, DeviMahatmyamSection } from '@/types';
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageMetaTitle = `${deviMahatmyamFormsData.pageTitle} | Shakti Darshan`;
 const pageMetaDescription = deviMahatmyamFormsData.pageDescription;
 const ogImageUrl = `${siteUrl}/og-images/devi-mahatmyam-forms-shakti-darshan.jpg`;

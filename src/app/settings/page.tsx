@@ -12,7 +12,7 @@ import { Moon, Sun, Palette, Settings as SettingsIcon } from "lucide-react";
 // Metadata import is removed as it's not used for static export
 // import type { Metadata } from 'next'; 
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Application Settings - Customize Your Shakti Darshan Experience";
 const pageDescription = "Personalize your Shakti Darshan spiritual journey. Choose your preferred color theme, toggle between dark and light mode, and manage other application preferences for an optimal experience.";
 // const ogImageUrl = `${siteUrl}/og-images/settings-shakti-darshan.jpg`; // Not used if metadata is removed

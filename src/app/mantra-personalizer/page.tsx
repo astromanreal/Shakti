@@ -10,7 +10,7 @@ import { Wand2, Sparkles, Loader2, AlertCircle } from 'lucide-react';
 // Placeholder for a form component if we use react-hook-form later
 // import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Mantra Personalizer - AI-Powered Stotras & Mantras | Shakti Darshan";
 const pageDescription = "Generate personalized stotras and mantras with our AI tool. Select a deity, express your intention, and receive a unique chant tailored for your spiritual practice and connection with the Divine Feminine.";
 const ogImageUrl = `${siteUrl}/og-images/mantra-personalizer-shakti-darshan.jpg`;

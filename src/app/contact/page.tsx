@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Contact Shakti Darshan - Connect with Our Team";
 const pageDescription = "Get in touch with the Shakti Darshan team. Whether you have questions, feedback, or collaboration ideas about Maa Adi Shakti, the Divine Feminine, or Sanatan Dharma, we'd love to hear from you.";
 const ogImageUrl = `${siteUrl}/og-images/contact-shakti-darshan.jpg`;

@@ -17,7 +17,7 @@ type SacredChantDetailPageProps = {
   params: { id: string };
 };
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 
 export async function generateMetadata({ params }: SacredChantDetailPageProps): Promise<Metadata> {
   const chant = sacredChantsData.find((c) => c.id === params.id);

@@ -14,7 +14,7 @@ import { panchaPrakritiData } from '@/data/pancha-prakriti-data';
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageMetaTitle = "Pancha Prakritis — Five Divine Manifestations of Mahadevi | Shakti Darshan";
 const pageMetaDescription = "Discover the Pancha Prakritis, the five core feminine energies of Mahadevi as described in the Devi Bhagavata Purana: Ganesh Janani Durga (Parvati), Lakshmi, Saraswati, Savitri (Gayatri), and Radha.";
 const ogImageUrl = `${siteUrl}/og-images/pancha-prakritis-mahakali.jpg`;

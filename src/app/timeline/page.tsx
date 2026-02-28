@@ -6,7 +6,7 @@ import { CalendarClock, Landmark, Sparkles, Users, Info, Tag } from 'lucide-reac
 import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Spiritual Timeline of Shakti - Cosmic Ages & Divine Manifestations";
 const pageDescription = "Trace the presence and influence of Maa Adi Shakti through cosmic Yugas and historical eras. Witness her timeless manifestations and pivotal role in shaping dharma, Sanatan Dharma, and spiritual evolution.";
 const ogImageUrl = `${siteUrl}/og-images/shakti-timeline-history.jpg`;

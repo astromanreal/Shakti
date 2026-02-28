@@ -14,7 +14,7 @@ import { philosophyContent } from '@/data/philosophy-content';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Philosophy of Shakti - Cosmic Energy & Divine Feminine in Hinduism";
 const pageDescription = "Explore Shakti as Supreme Consciousness-Energy in Indian philosophy. Delve into Shaktism, Tantra, Kundalini, and the dynamic interplay of Prakriti & Purusha within Sanatana Dharma. Understand the spiritual power of the Divine Feminine.";
 const ogImageUrl = `${siteUrl}/og-images/philosophy-shakti-darshan.jpg`;

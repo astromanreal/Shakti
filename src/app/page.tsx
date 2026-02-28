@@ -23,7 +23,7 @@ import { Separator } from '@/components/ui/separator';
 import type { Metadata } from 'next';
 import { cn } from '@/lib/utils';
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.shaktidarshan.com';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://adishakti.vercel.app/';
 const pageTitle = "Shakti Darshan – Divine Sanctuary of Cosmic Power & Feminine Wisdom";
 const pageDescription = "Welcome to Shakti Darshan, your sacred portal to explore the multifaceted Divine Feminine. Discover Maa Adi Shakti's forms, wisdom, mantras, and sacred traditions like Tridevi, Mahavidyas, and Shakti Peethas.";
 const ogImageUrl = `${siteUrl}/og-images/homepage-shakti-darshan.jpg`;
@@ -159,7 +159,7 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
+      ></script>
       <div className="container mx-auto px-4 py-8 space-y-16 md:space-y-24">
         {/* 1. Hero Banner (Sacred Welcome) */}
         <section 
